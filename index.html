@@ -26,14 +26,25 @@
 </head>
 <body class="min-h-screen flex flex-col bg-slate-50 text-slate-900">
 
+  <!-- Toast Notification for Copy / Share -->
+  <div id="share-toast" class="fixed bottom-4 right-4 z-50 hidden bg-slate-900 text-white text-xs sm:text-sm font-medium px-4 py-2.5 rounded-xl shadow-lg border border-slate-700 transition">
+    Link copied to clipboard!
+  </div>
+
   <!-- Top Gilbertese & Sunni Greeting Banner -->
   <header class="bg-gradient-to-r from-emerald-900 via-teal-800 to-cyan-900 text-white shadow-lg relative overflow-hidden">
     <div class="max-w-4xl mx-auto px-4 py-6 sm:py-8 relative z-10">
       <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
         <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-emerald-700/70 text-emerald-100 border border-emerald-500/40">
-          <span>🌴</span> Mauri! Welcome to Our Pacific Bridge of Faith
+          <span>🌴</span> Te Mauri, Te Raoi ao Te Tabomoa • Health, Peace &amp; Blessing
         </span>
-        <div class="flex items-center gap-2 no-print">
+        <div class="flex flex-wrap items-center gap-1.5 no-print">
+          <button id="btn-share-whatsapp-top" type="button" class="px-3 py-1 rounded-full text-xs font-semibold bg-green-500/90 hover:bg-green-500 text-white transition shadow-sm flex items-center gap-1">
+            <span>💬</span> WhatsApp
+          </button>
+          <button id="btn-share-facebook-top" type="button" class="px-3 py-1 rounded-full text-xs font-semibold bg-blue-600/90 hover:bg-blue-600 text-white transition shadow-sm flex items-center gap-1">
+            <span>📘</span> Facebook
+          </button>
           <button id="btn-lang-toggle" type="button" class="px-3 py-1 rounded-full text-xs font-medium bg-white/15 hover:bg-white/25 text-white transition border border-white/20">
             Show Gilbertese Notes: ON
           </button>
@@ -50,18 +61,23 @@
         Did you know that no Muslim is truly a Muslim without loving, honoring, and believing in Jesus Christ (peace be upon him) and awaiting his physical return to earth? Explore directly from the <strong>Noble Quran</strong> and the <strong>Authentic Prophetic Sunnah (Hadith)</strong>.
       </p>
 
-      <!-- Gilbertese Cultural Bridge Note -->
+      <!-- Gilbertese Cultural Bridge Note (Maneaba & Te Atua Bridge) -->
       <div id="gilbertese-banner" class="mt-4 p-3.5 rounded-xl bg-white/10 backdrop-blur-sm border border-white/15 text-xs sm:text-sm text-emerald-50 flex items-start gap-3">
         <span class="text-lg leading-none mt-0.5">🤝</span>
-        <div>
-          <strong class="text-amber-200">Mauri ao Tekeraoi! (Greetings &amp; Peace to Kiribati):</strong>
-          In Gilbertese (<em>Te taetae ni Kiribati</em>), Jesus is known as <strong>Iesu Kristo</strong>. In the Arabic Quran, he is honored as <strong>'Isa Al-Masih</strong> (Jesus the Messiah, peace be upon him). This page is ultra-lightweight so you can read comfortably even on low mobile data.
+        <div class="space-y-1">
+          <p>
+            <strong class="text-amber-200">Mauri! Shared Respect in the Spirit of the Maneaba:</strong>
+            In Kiribati, the <em>Maneaba</em> (community meeting house) teaches us to listen to one another with humility, warmth, and mutual respect.
+          </p>
+          <p>
+            In Gilbertese (<em>Te taetae ni Kiribati</em>), the One Creator is called <strong>Te Atua</strong> and Jesus is known as <strong>Iesu Kristo</strong>. In the Aramaic language Jesus himself spoke, God is <em>Alaha</em>—the exact same Semitic root as <strong>Allah</strong> in the Arabic Quran, where Jesus is revered as <strong>'Isa Al-Masih</strong> (Jesus the Messiah, peace be upon him).
+          </p>
         </div>
       </div>
     </div>
   </header>
 
-  <!-- Sticky Navigation Tabs (Multi-Page Switcher inside Single File) -->
+  <!-- Sticky Navigation Tabs (3-Page Switcher inside Single File) -->
   <nav class="sticky top-0 z-30 bg-white/95 backdrop-blur border-b border-slate-200 shadow-sm no-print" aria-label="Main Navigation">
     <div class="max-w-4xl mx-auto px-2 sm:px-4">
       <div class="flex items-center justify-between overflow-x-auto py-2 gap-1 sm:gap-2">
@@ -118,7 +134,7 @@
         <!-- Search and Filter Controls -->
         <div class="mt-5 flex flex-col sm:flex-row gap-3 items-stretch sm:items-center justify-between no-print">
           <div class="relative flex-1">
-            <input id="qa-search-input" type="text" placeholder="Search questions (e.g., Mary, miracles, Messiah, prayer)..." class="w-full pl-9 pr-4 py-2 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-600 bg-slate-50" />
+            <input id="qa-search-input" type="text" placeholder="Search questions (e.g., Mary, forgiveness, Gospel, miracles, Messiah)..." class="w-full pl-9 pr-4 py-2 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-600 bg-slate-50" />
             <span class="absolute left-3 top-2.5 text-slate-400 text-sm">🔍</span>
           </div>
           <div class="flex flex-wrap gap-1.5" id="qa-category-filters">
@@ -139,7 +155,7 @@
           <span class="text-xs font-bold uppercase tracking-wider text-emerald-800">Next Deep Dive</span>
           <h3 class="text-lg font-bold text-slate-900 mt-0.5">What Will Jesus (PBUH) Do When He Returns to Earth?</h3>
           <p class="text-xs sm:text-sm text-slate-600 mt-1">
-            Read the complete timeline of his descent, how he will defeat the False Messiah, and his 40-year reign of justice and peace from the Quran and Sahih Hadith.
+            Read the complete 7-stage prophetic timeline of his descent, how he will defeat the False Messiah, and his 40-year reign of justice and peace from the Quran and Sahih Hadith.
           </p>
         </div>
         <button id="btn-goto-return" type="button" class="shrink-0 px-4 py-2.5 rounded-xl bg-emerald-700 hover:bg-emerald-800 text-white text-sm font-semibold shadow-sm transition">
@@ -179,14 +195,14 @@
         <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-5">
           <div>
             <h3 class="text-lg font-bold text-slate-900">7 Prophetic Stages of Jesus's Return &amp; Mission on Earth</h3>
-            <p class="text-xs sm:text-sm text-slate-500">Click any stage below to view the full scriptural text and verified links.</p>
+            <p class="text-xs sm:text-sm text-slate-500">Click any of the 7 stages below to read the full scriptural text, scholarly context, and verified links.</p>
           </div>
           <span class="text-xs font-semibold px-2.5 py-1 rounded-full bg-emerald-50 text-emerald-800 border border-emerald-200 w-fit">
             100% Authentic Quran &amp; Sahih Hadith
           </span>
         </div>
 
-        <!-- Stage Filter Pills -->
+        <!-- Stage Filter Pills (All 7 Stages) -->
         <div id="return-stage-tabs" class="grid grid-cols-2 sm:grid-cols-4 gap-2 mb-5 no-print"></div>
 
         <!-- Active Stage Detail Card -->
@@ -199,44 +215,44 @@
             <thead>
               <tr class="bg-emerald-900 text-white">
                 <th class="p-3 rounded-tl-lg font-semibold">Event / Action</th>
-                <th class="p-3 font-semibold">What Islamic Sources Teach</th>
+                <th class="p-3 font-semibold">What Authentic Sunni Sources Teach</th>
                 <th class="p-3 rounded-tr-lg font-semibold">Direct Source Reference</th>
               </tr>
             </thead>
             <tbody class="divide-y divide-slate-200 bg-white">
               <tr class="hover:bg-slate-50">
-                <td class="p-3 font-semibold text-slate-900">1. Raised Alive by God</td>
-                <td class="p-3 text-slate-700">God saved Jesus from crucifixion, raised him alive to heaven, and appointed his return as a sign of the Hour.</td>
-                <td class="p-3"><a href="https://quran.com/ali-imran/45-55" target="_blank" rel="noopener noreferrer" class="text-emerald-700 underline font-medium">Quran 3:55</a>, <a href="https://legacy.quran.com/43/61-67" target="_blank" rel="noopener noreferrer" class="text-emerald-700 underline font-medium">Quran 43:61</a></td>
+                <td class="p-3 font-semibold text-slate-900">1. Saved &amp; Raised Alive</td>
+                <td class="p-3 text-slate-700">God protected Jesus from crucifixion, raised him bodily and alive to heaven, and made his return a sign of the Hour.</td>
+                <td class="p-3"><a href="https://legacy.quran.com/4/157-158" target="_blank" rel="noopener noreferrer" class="text-emerald-700 underline font-medium">Quran 4:157–159</a>, <a href="https://legacy.quran.com/43/61-67" target="_blank" rel="noopener noreferrer" class="text-emerald-700 underline font-medium">Quran 43:61</a></td>
               </tr>
               <tr class="hover:bg-slate-50">
-                <td class="p-3 font-semibold text-slate-900">2. Physical Descent from Heaven</td>
-                <td class="p-3 text-slate-700">He will descend at the white minaret east of Damascus, resting his hands on the wings of two angels.</td>
+                <td class="p-3 font-semibold text-slate-900">2. Descent in Damascus</td>
+                <td class="p-3 text-slate-700">He will descend physically at the white minaret east of Damascus with his hands resting on the wings of two angels.</td>
                 <td class="p-3"><a href="https://sunnah.com/muslim:2937a" target="_blank" rel="noopener noreferrer" class="text-emerald-700 underline font-medium">Sahih Muslim 2937a</a></td>
               </tr>
               <tr class="hover:bg-slate-50">
                 <td class="p-3 font-semibold text-slate-900">3. Praying With the Believers</td>
-                <td class="p-3 text-slate-700">He will join the believers at dawn prayer, honoring the community before ruling by God's pure law.</td>
-                <td class="p-3"><a href="https://sunnah.com/muslim:155f" target="_blank" rel="noopener noreferrer" class="text-emerald-700 underline font-medium">Sahih Muslim 155f</a>, <a href="https://sunnah.com/bukhari:3449" target="_blank" rel="noopener noreferrer" class="text-emerald-700 underline font-medium">Bukhari 3449</a></td>
+                <td class="p-3 text-slate-700">He will pray behind the righteous Sunni leader (Al-Mahdi) to honor the finality of Prophet Muhammad's (ﷺ) message, then lead justly.</td>
+                <td class="p-3"><a href="https://sunnah.com/muslim:156" target="_blank" rel="noopener noreferrer" class="text-emerald-700 underline font-medium">Sahih Muslim 156</a>, <a href="https://sunnah.com/bukhari:3449" target="_blank" rel="noopener noreferrer" class="text-emerald-700 underline font-medium">Bukhari 3449</a></td>
               </tr>
               <tr class="hover:bg-slate-50">
                 <td class="p-3 font-semibold text-slate-900">4. Defeating the False Messiah</td>
-                <td class="p-3 text-slate-700">He will confront and end the deception of the Antichrist (<em>Al-Masih ad-Dajjal</em>) at the gate of Ludd.</td>
+                <td class="p-3 text-slate-700">He will confront and end the tyranny of the Antichrist (<em>Al-Masih ad-Dajjal</em>) and his armed forces at the gate of Ludd.</td>
                 <td class="p-3"><a href="https://sunnah.com/muslim:2937a" target="_blank" rel="noopener noreferrer" class="text-emerald-700 underline font-medium">Sahih Muslim 2937a</a></td>
               </tr>
               <tr class="hover:bg-slate-50">
-                <td class="p-3 font-semibold text-slate-900">5. Uniting Humanity on Monotheism</td>
-                <td class="p-3 text-slate-700">He will clarify the truth about his message, break false symbols, abolish tribute taxes, and unite believers.</td>
+                <td class="p-3 font-semibold text-slate-900">5. Clarifying His True Message</td>
+                <td class="p-3 text-slate-700">Jesus himself will lovingly testify that he was saved from the cross, restore Abrahamic dietary laws, and unite humanity in worshipping God alone.</td>
                 <td class="p-3"><a href="https://sunnah.com/bukhari:3448" target="_blank" rel="noopener noreferrer" class="text-emerald-700 underline font-medium">Sahih al-Bukhari 3448</a></td>
               </tr>
               <tr class="hover:bg-slate-50">
-                <td class="p-3 font-semibold text-slate-900">6. 40 Years of Peace &amp; Blessing</td>
-                <td class="p-3 text-slate-700">He will live on earth for 40 years; hatred and envy will disappear, and the earth will bring forth abundant blessings.</td>
-                <td class="p-3"><a href="https://sunnah.com/abudawud:4324" target="_blank" rel="noopener noreferrer" class="text-emerald-700 underline font-medium">Sunan Abi Dawud 4324</a></td>
+                <td class="p-3 font-semibold text-slate-900">6. Protection From Gog &amp; Magog &amp; Hajj</td>
+                <td class="p-3 text-slate-700">He will lead believers to safety at Mount Tur, supplicate to God to end the corruption of Gog and Magog, and perform Hajj.</td>
+                <td class="p-3"><a href="https://sunnah.com/muslim:2937a" target="_blank" rel="noopener noreferrer" class="text-emerald-700 underline font-medium">Sahih Muslim 2937a</a>, <a href="https://sunnah.com/muslim:1252a" target="_blank" rel="noopener noreferrer" class="text-emerald-700 underline font-medium">Muslim 1252a</a></td>
               </tr>
               <tr class="hover:bg-slate-50">
-                <td class="p-3 font-semibold text-slate-900">7. Natural Passing &amp; Honor</td>
-                <td class="p-3 text-slate-700">After his blessed reign of justice, he will pass away naturally and believers will offer his funeral prayer.</td>
+                <td class="p-3 font-semibold text-slate-900">7. 40 Years of Peace &amp; Natural Passing</td>
+                <td class="p-3 text-slate-700">He will live on earth for 40 years in universal peace and abundance before passing away naturally, with Muslims praying his funeral prayer.</td>
                 <td class="p-3"><a href="https://sunnah.com/abudawud:4324" target="_blank" rel="noopener noreferrer" class="text-emerald-700 underline font-medium">Sunan Abi Dawud 4324</a></td>
               </tr>
             </tbody>
@@ -274,7 +290,7 @@
               <span>📘</span> 1. The Noble Quran
             </h3>
             <p class="text-xs sm:text-sm text-slate-700 mt-1.5 leading-relaxed">
-              The verbatim word of God revealed to Prophet Muhammad (ﷺ), which confirms the truth of the earlier revelations given to Abraham, Moses, and Jesus (peace be upon them all) and calls humanity to worship the One Creator directly without intermediaries.
+              The verbatim word of God revealed to Prophet Muhammad (ﷺ), which confirms the truth of the original revelations given to Abraham, Moses, and Jesus (peace be upon them all)—including the original Gospel (<em>Al-Injil</em>, <a href="https://legacy.quran.com/5/46" target="_blank" rel="noopener noreferrer" class="text-emerald-800 underline font-semibold">Quran 5:46</a>)—and calls humanity to worship the One Creator directly.
             </p>
           </div>
           <div class="p-4 rounded-xl bg-amber-50/70 border border-amber-200">
@@ -282,7 +298,7 @@
               <span>📜</span> 2. The Authentic Sunnah (Hadith)
             </h3>
             <p class="text-xs sm:text-sm text-slate-700 mt-1.5 leading-relaxed">
-              The verified teachings, prayers, and example of Prophet Muhammad (ﷺ), preserved in collections like <a href="https://sunnah.com/bukhari:3448" target="_blank" rel="noopener noreferrer" class="text-emerald-800 underline font-semibold">Sahih al-Bukhari</a> and <a href="https://sunnah.com/muslim:155a" target="_blank" rel="noopener noreferrer" class="text-emerald-800 underline font-semibold">Sahih Muslim</a> through rigorous chains of eyewitness verification.
+              The verified teachings, prayers, and example of Prophet Muhammad (ﷺ), preserved in collections like <a href="https://sunnah.com/bukhari:3448" target="_blank" rel="noopener noreferrer" class="text-emerald-800 underline font-semibold">Sahih al-Bukhari</a> and <a href="https://sunnah.com/muslim:155a" target="_blank" rel="noopener noreferrer" class="text-emerald-800 underline font-semibold">Sahih Muslim</a> through unbroken chains of trustworthy eyewitnesses (<em>Isnad</em>).
             </p>
           </div>
         </div>
@@ -290,13 +306,23 @@
         <!-- Loving All Companions (Parallel to Jesus's Disciples) -->
         <div class="p-4 sm:p-5 rounded-xl bg-slate-50 border border-slate-200">
           <h3 class="font-bold text-slate-900 text-base flex items-center gap-2">
-            <span>🕊️</span> Honoring Both the Disciples of Jesus &amp; the Companions of Muhammad (ﷺ)
+            <span>🕊️</span> Honoring Both the Disciples of Jesus &amp; All Companions of Muhammad (ﷺ)
           </h3>
           <p class="text-xs sm:text-sm text-slate-700 mt-2 leading-relaxed">
-            In the Quran (<a href="https://quran.com/ali-imran/45-55" target="_blank" rel="noopener noreferrer" class="text-emerald-700 underline font-medium">Surah Ali 'Imran 3:52</a>), God praises the faithful disciples of Jesus (<em>Al-Hawariyyun</em>) who stood by him and said: <em>"We are supporters of Allah; we have believed in Allah and testify that we are submitting to Him."</em>
+            In the Quran (<a href="https://quran.com/ali-imran/45-55" target="_blank" rel="noopener noreferrer" class="text-emerald-700 underline font-medium">Surah Ali 'Imran 3:52</a> &amp; <a href="https://legacy.quran.com/61/6-12" target="_blank" rel="noopener noreferrer" class="text-emerald-700 underline font-medium">Surah As-Saff 61:14</a>), God praises the faithful Disciples of Jesus (<em>Al-Hawariyyun</em>) who stood by him and said: <em>"We are supporters of Allah; we have believed in Allah and testify that we are submitting to Him."</em>
           </p>
           <p class="text-xs sm:text-sm text-slate-700 mt-2 leading-relaxed">
-            In the exact same spirit, Sunni Muslims love, respect, and pray for <strong>all the Companions (<em>Sahabah</em>) and family of Prophet Muhammad (ﷺ)</strong>—including Abu Bakr, 'Umar, 'Uthman, 'Ali, Mother of the Believers 'Aishah, and Abu Hurairah (may Allah be pleased with them all)—and never speak negatively about any of the men and women who sacrificed to preserve God's message for humanity.
+            In the exact same spirit, Sunni Muslims love, respect, and pray for <strong>all the noble Companions (<em>Sahabah</em>) and pure household (<em>Ahlul Bayt</em>) of Prophet Muhammad (ﷺ)</strong>—including Abu Bakr as-Siddiq, 'Umar ibn al-Khattab, 'Uthman ibn 'Affan, 'Ali ibn Abi Talib, Mother of the Believers 'Aishah, Fatimah, al-Hasan, al-Husayn, and Abu Hurairah (may Allah be pleased with them all)—following the Quranic praise in <a href="https://quran.com/9/100" target="_blank" rel="noopener noreferrer" class="text-emerald-700 underline font-medium">Surah At-Tawbah 9:100</a> and <a href="https://quran.com/59/10" target="_blank" rel="noopener noreferrer" class="text-emerald-700 underline font-medium">Surah Al-Hashr 59:10</a>, and never speaking negatively about any of them.
+          </p>
+        </div>
+
+        <!-- Pacific Island Stewardship & Neighborly Kindness Card -->
+        <div class="p-4 sm:p-5 rounded-xl bg-teal-50/70 border border-teal-200">
+          <h3 class="font-bold text-teal-950 text-base flex items-center gap-2">
+            <span>🌊</span> Caring for Our Islands &amp; Living in Kindness With Neighbors
+          </h3>
+          <p class="text-xs sm:text-sm text-slate-700 mt-1.5 leading-relaxed">
+            Islam teaches that human beings are entrusted by God as caretakers and stewards of the earth (<a href="https://quran.com/2/30" target="_blank" rel="noopener noreferrer" class="text-emerald-800 underline font-medium">Surah Al-Baqarah 2:30</a>)—protecting the oceans, trees, and fragile island ecosystems—and commands Muslims to deal kindly, justly, and respectfully with peaceful Christian neighbors (<a href="https://quran.com/60/8" target="_blank" rel="noopener noreferrer" class="text-emerald-800 underline font-medium">Surah Al-Mumtahanah 60:8</a>).
           </p>
         </div>
       </div>
@@ -392,11 +418,16 @@
         <p class="font-semibold text-white">Built on the Noble Quran &amp; Authentic Prophetic Sunnah</p>
         <p class="text-slate-400 mt-0.5">Honoring Jesus ('Isa / Iesu, peace be upon him), all Prophets of God, and all noble Companions.</p>
       </div>
-      <div class="flex flex-wrap gap-3">
+      <div class="flex flex-wrap items-center gap-3">
+        <button id="btn-share-whatsapp-footer" type="button" class="px-3 py-1.5 rounded-lg bg-green-600 hover:bg-green-500 text-white font-semibold transition no-print">
+          Share on WhatsApp
+        </button>
+        <button id="btn-share-facebook-footer" type="button" class="px-3 py-1.5 rounded-lg bg-blue-600 hover:bg-blue-500 text-white font-semibold transition no-print">
+          Share on Facebook
+        </button>
         <a href="https://quran.com/ali-imran/45-55" target="_blank" rel="noopener noreferrer" class="text-emerald-400 hover:underline">Quran.com</a>
         <a href="https://sunnah.com/bukhari:3448" target="_blank" rel="noopener noreferrer" class="text-emerald-400 hover:underline">Sunnah.com</a>
         <a href="https://www.whyislam.org/jesus-pbuh/" target="_blank" rel="noopener noreferrer" class="text-emerald-400 hover:underline">WhyIslam.org</a>
-        <a href="https://www.islamreligion.com/en/articles/31/jesus-in-islam-part-1" target="_blank" rel="noopener noreferrer" class="text-emerald-400 hover:underline">IslamReligion.com</a>
       </div>
     </div>
   </footer>
@@ -409,7 +440,7 @@
         category: 'honor',
         question: '1. Do Muslims truly believe in and love Jesus (Iesu / \'Isa)?',
         shortTag: 'Pillar of Faith',
-        answer: 'Yes—a person cannot be a Muslim without believing in and honoring Jesus (\'Isa, peace be upon him) as one of God\'s greatest and mightiest Messengers (Ulul \'Azm). Whenever Muslims mention his name, they immediately say "Alayhis Salam" (Peace be upon him) out of deep love and reverence.',
+        answer: 'Yes—a person cannot be a Muslim without believing in and honoring Jesus (\'Isa, peace be upon him) as one of God\'s five greatest Messengers of Firm Resolve (Ulul \'Azm, alongside Noah, Abraham, Moses, and Muhammad, peace be upon them all). Whenever Muslims mention his name, they say "Alayhis Salam" (Peace be upon him) out of deep love and reverence.',
         quote: '"Say, [O believers], \'We have believed in Allah and what has been revealed to us and what has been revealed to Abraham and Ishmael and Isaac and Jacob and the Descendants, and what was given to Moses and Jesus and what was given to the prophets from their Lord. We make no distinction between any of them, and we are Muslims [in submission] to Him.\'"',
         sourceLabel: 'Noble Quran — Surah Al-Baqarah 2:136 & Sahih al-Bukhari 3443',
         sourceUrl: 'https://quran.com/2/136'
@@ -419,9 +450,9 @@
         category: 'honor',
         question: '2. How is Jesus honored in the Quran, and what titles is he given?',
         shortTag: '90+ Verses',
-        answer: 'Jesus (peace be upon him) is referenced in over 90 verses across 15 chapters of the Quran. The Quran honors him with unique, exalted titles: Al-Masih (The Messiah / Christ), Kalimatullah (A Word from God conveyed to Mary), Ruhun Minh (A Spirit from Him), and a Sign and Mercy for humanity—honored both in this world and in the Hereafter.',
+        answer: 'Jesus (peace be upon him) is referenced in over 90 verses across 15 chapters of the Quran (including 25 times by his name \'Isa, alongside titles such as Al-Masih and Ibn Maryam). The Quran honors him as Al-Masih (The Messiah / Christ), Kalimatullah (A Word from God conveyed to Mary), Ruhun Minh (A Spirit created by Him), and a Sign and Mercy for humanity—distinguished in this world and the Hereafter. Moreover, Muslims believe in the original Gospel (Al-Injil) given by God to Jesus as guidance and light (Quran 5:46).',
         quote: '"[And mention] when the angels said, \'O Mary, indeed Allah gives you good tidings of a word from Him, whose name will be the Messiah, Jesus, the son of Mary—distinguished in this world and the Hereafter and among those brought near [to Allah].\'"',
-        sourceLabel: 'Noble Quran — Surah Ali \'Imran 3:45',
+        sourceLabel: 'Noble Quran — Surah Ali \'Imran 3:45 & Surah Al-Ma\'idah 5:46',
         sourceUrl: 'https://quran.com/ali-imran/45-55'
       },
       {
@@ -429,9 +460,9 @@
         category: 'honor',
         question: '3. What does Islam say about the Virgin Mary (Maryam)?',
         shortTag: 'Surah Maryam (Ch. 19)',
-        answer: 'Mary (Maryam, peace be upon her) holds the highest rank of honor in the Quran. She is the only woman mentioned by name in the entire Quran, and Chapter 19 (Surah Maryam) is named after her—more than any chapter in the Bible. The Quran declares that God purified her and chose her above the women of all nations.',
+        answer: 'Mary (Maryam, peace be upon her) holds the highest rank of honor in the Quran. She is the only woman mentioned by her personal name in the entire Quran, and Chapter 19 (Surah Maryam) is named after her—whereas no book or chapter in the New Testament bears her name. Her name Maryam appears 34 times in the Quran (compared to 19 times in the New Testament), and God declares that He purified her and chose her above the women of the worlds.',
         quote: '"And [mention] when the angels said, \'O Mary, indeed Allah has chosen you and purified you and chosen you above the women of the worlds.\'"',
-        sourceLabel: 'Noble Quran — Surah Ali \'Imran 3:42',
+        sourceLabel: 'Noble Quran — Surah Ali \'Imran 3:42 & Surah Maryam 19:16–34',
         sourceUrl: 'https://quran.com/3/42'
       },
       {
@@ -439,9 +470,9 @@
         category: 'miracles',
         question: '4. Do Muslims believe in the miraculous Virgin Birth of Jesus?',
         shortTag: 'Virgin Birth',
-        answer: 'Yes, completely. Islam teaches that Jesus was born miraculously to the chaste Virgin Mary without any human father. When Mary asked how she could bear a child when no man had touched her, the angel explained that for the Creator of the universe, He simply decrees a matter by saying, "Be," and it is.',
-        quote: '"She said, \'My Lord, how will I have achild when no man has touched me?\' [The angel] said, \'Such is Allah; He creates what He wills. When He decrees a matter, He only says to it, "Be," and it is.\'"',
-        sourceLabel: 'Noble Quran — Surah Ali \'Imran 3:47',
+        answer: 'Yes, completely. Islam teaches that Jesus was born miraculously to the chaste Virgin Mary without any human father. When Mary asked how she could bear a child when no man had touched her, the angel explained that for the Creator of the universe, He simply decrees a matter by saying, "Be," and it is—just as He created Adam without father or mother (Quran 3:59).',
+        quote: '"She said, \'My Lord, how will I have a child when no man has touched me?\' [The angel] said, \'Such is Allah; He creates what He wills. When He decrees a matter, He only says to it, "Be," and it is.\'"',
+        sourceLabel: 'Noble Quran — Surah Ali \'Imran 3:47 & 3:59',
         sourceUrl: 'https://quran.com/ali-imran/45-55'
       },
       {
@@ -449,27 +480,27 @@
         category: 'miracles',
         question: '5. What miracles did Jesus perform according to the Quran?',
         shortTag: 'Miracles by God\'s Permission',
-        answer: 'The Quran affirms the extraordinary miracles performed by Jesus by God\'s leave: speaking as an infant from the cradle to defend his mother\'s honor, healing those born blind and lepers, bringing the dead back to life by God\'s permission, and fashioning the shape of a bird from clay and breathing into it so it became a living bird by God\'s permission.',
+        answer: 'The Quran affirms the extraordinary miracles performed by Jesus by God\'s leave (bi-idhnillah): speaking as an infant from the cradle to defend his mother\'s honor (Surah Maryam 19:30–33), healing those born blind and lepers, bringing the dead back to life by God\'s permission, informing people of what they ate and stored in their homes, and fashioning a bird from clay and breathing into it so it became a living bird by God\'s permission.',
         quote: '"...I cure the blind and the leper, and I give life to the dead—by permission of Allah..."',
-        sourceLabel: 'Noble Quran — Surah Ali \'Imran 3:49 & Surah Al-Ma\'idah 5:110',
-        sourceUrl: 'https://quran.com/ali-imran/45-55'
+        sourceLabel: 'Noble Quran — Surah Ali \'Imran 3:49 & Surah Maryam 19:30–34',
+        sourceUrl: 'https://quran.com/maryam/30-34'
       },
       {
         id: 6,
         category: 'miracles',
-        question: '6. What was the core message that Jesus preached?',
-        shortTag: 'Pure Monotheism',
-        answer: 'In Islam, Jesus did not come to abolish the Law of Moses or teach people to worship himself; rather, he called people to love and worship the One True Creator alone—matching Jesus\'s words in the Gospel of Mark 12:29 ("The Lord our God, the Lord is One") and John 17:3 ("that they know You, the only true God, and Jesus Christ whom You have sent").',
-        quote: '"Indeed, Allah is my Lord and your Lord, so worship Him. That is the straight path."',
-        sourceLabel: 'Noble Quran — Surah Ali \'Imran 3:51 & Surah Maryam 19:36',
-        sourceUrl: 'https://quran.com/ali-imran/45-55'
+        question: '6. What was the core message that Jesus preached, and did he foretell Prophet Muhammad (ﷺ)?',
+        shortTag: 'Pure Monotheism & Prophecy',
+        answer: 'In Islam, Jesus called people to love and worship the One True Creator (Te Atua / Allah) alone—matching Mark 12:29 ("The Lord our God, the Lord is One") and John 17:3 ("that they know You, the only true God, and Jesus Christ whom You have sent"). Furthermore, in Surah As-Saff 61:6, Jesus confirmed the Torah before him and gave glad tidings of a Final Messenger to come after him named Ahmad (Muhammad, ﷺ).',
+        quote: '"And [mention] when Jesus, the son of Mary, said, \'O children of Israel, indeed I am the messenger of Allah to you confirming what came before me of the Torah and bringing good tidings of a messenger to come after me, whose name is Ahmad.\'"',
+        sourceLabel: 'Noble Quran — Surah As-Saff 61:6 & Surah Ali \'Imran 3:51',
+        sourceUrl: 'https://legacy.quran.com/61/6'
       },
       {
         id: 7,
         category: 'miracles',
-        question: '7. Why do Muslims honor Jesus as the Messiah and Prophet rather than God Himself?',
-        shortTag: 'God\'s Absolute Oneness',
-        answer: 'Islam holds that the Creator is eternal, self-sufficient, and above human needs such as eating, sleeping, or having physical offspring. Honoring Jesus as God\'s beloved Messiah and Messenger preserves both the majesty of the One Creator and the pure humility of Jesus, who himself prayed to God.',
+        question: '7. Why do Muslims honor Jesus as the Messiah and Prophet rather than God\'s literal son?',
+        shortTag: 'God\'s Oneness & Love',
+        answer: 'In the Bible, righteous servants are often called "sons of God" metaphorically to show closeness to God (such as peacemakers in Matthew 5:9). Islam affirms that God loves Jesus deeply, while clarifying that the Creator is eternal and above biological reproduction or physical offspring (Surah Al-Ikhlas 112:1–4). Honoring Jesus as God\'s beloved Messiah and Messenger preserves both the majesty of the One Creator and the pure humility of Jesus.',
         quote: '"The Messiah, son of Mary, was not but a messenger; [other] messengers have passed on before him. And his mother was a supporter of truth..."',
         sourceLabel: 'Noble Quran — Surah Al-Ma\'idah 5:75',
         sourceUrl: 'https://quran.com/5/75'
@@ -487,12 +518,12 @@
       {
         id: 9,
         category: 'return',
-        question: '9. Do Muslims believe Jesus was crucified, or that he will return?',
-        shortTag: 'Raised Alive & Returning',
-        answer: 'Muslims believe that God protected and saved his beloved Messenger Jesus from being killed on the cross—raising him up alive unto Himself (Quran 4:157–158). Furthermore, authentic Sunni Hadith confirm that Jesus will physically descend back to earth to defeat the False Messiah (Antichrist) and establish 40 years of peace and justice.',
-        quote: '"By Him in Whose Hands my soul is, surely (Jesus,) the son of Mary will soon descend amongst you and will judge mankind justly..."',
-        sourceLabel: 'Sahih al-Bukhari 3448 & Sahih Muslim 155a',
-        sourceUrl: 'https://sunnah.com/bukhari:3448'
+        question: '9. If God saved Jesus from the cross, how are our sins forgiven in Islam?',
+        shortTag: 'Saved Alive & Direct Forgiveness',
+        answer: 'Muslims believe God heard Jesus\'s prayer and protected His beloved Messenger from being killed on the cross—raising him up bodily and alive unto Himself (Quran 4:157–158). In Islam, God\'s mercy (Ar-Rahman, Ar-Rahim) is so vast and direct that He does not require an innocent prophet to suffer or shed blood in order to forgive us: whenever any person turns directly to God in sincere repentance, God forgives all sins completely (Quran 39:53).',
+        quote: '"Say, \'O My servants who have transgressed against themselves [by sinning], do not despair of the mercy of Allah. Indeed, Allah forgives all sins. Indeed, it is He who is the Forgiving, the Merciful.\'"',
+        sourceLabel: 'Noble Quran — Surah Az-Zumar 39:53 & Surah An-Nisa 4:157–158',
+        sourceUrl: 'https://legacy.quran.com/39/53'
       },
       {
         id: 10,
@@ -510,10 +541,10 @@
       {
         id: 'stage-1',
         shortTitle: '1. Saved & Raised Alive',
-        headline: 'God Saved Jesus and Raised Him Alive to Heaven',
-        summary: 'According to the Quran, Jesus (peace be upon him) was neither killed nor crucified; rather, Allah protected his beloved Messenger from his enemies and raised him up alive to heaven. The Quran declares that his return is a certain sign of the approaching Hour.',
+        headline: 'God Saved Jesus from the Cross and Raised Him Alive',
+        summary: 'According to the Quran (Surah An-Nisa 4:157–159 and Surah Ali \'Imran 3:55), Jesus (peace be upon him) was neither killed nor crucified; rather, Allah protected His beloved Messenger from his enemies and raised him up alive in body and soul to heaven. Every person of the People of the Book will recognize and believe in him when he returns before his death (Quran 4:159).',
         quote: '"[Mention] when Allah said, \'O Jesus, indeed I will take you and raise you to Myself and purify you from those who disbelieve...\'" (Quran 3:55) • "And indeed, Jesus will be [a sign for] knowledge of the Hour, so be not in doubt of it, and follow Me. This is a straight path." (Quran 43:61)',
-        refText: 'Surah Ali \'Imran 3:55 & Surah Az-Zukhruf 43:61',
+        refText: 'Surah An-Nisa 4:157–159, Surah Ali \'Imran 3:55 & Surah Az-Zukhruf 43:61',
         refUrl: 'https://legacy.quran.com/43/61-67'
       },
       {
@@ -527,9 +558,9 @@
       },
       {
         id: 'stage-3',
-        shortTitle: '3. Prayer With Believers',
-        headline: 'Joining the Believers in Prayer & Honoring the Message',
-        summary: 'When Jesus (peace be upon him) descends, the righteous believers will be lined up for prayer. Their Imam will step back and invite Jesus to lead the prayer, but Jesus will tell him to lead that prayer as a sign of God\'s honor for this community, and will then lead humanity in justice.',
+        shortTitle: '3. Praying With Believers',
+        headline: 'Joining the Believers in Prayer & Upholding the Final Revelation',
+        summary: 'When Jesus (peace be upon him) descends, the righteous believers will be lined up for the dawn prayer led by their righteous leader (Al-Mahdi). The Imam will step back and invite Jesus to lead, but Jesus will tell him to lead that prayer—showing that Jesus returns not to bring a new religion, since Muhammad (ﷺ) is the Seal of the Prophets (Quran 33:40), but to rule justly by God\'s final revelation.',
         quote: '"Jesus son of Mary would then descend and their (Muslims\') commander would invite him to come and lead them in prayer, but he would say: No, some amongst you are commanders over some amongst you. This is the honor from Allah for this Ummah."',
         refText: 'Sahih Muslim 156 & Sahih al-Bukhari 3449',
         refUrl: 'https://sunnah.com/muslim:156'
@@ -538,25 +569,34 @@
         id: 'stage-4',
         shortTitle: '4. Defeating the Antichrist',
         headline: 'Ending the Deception of the False Messiah (Ad-Dajjal)',
-        summary: 'Before Jesus\'s descent, the world will face its greatest deception: Al-Masih ad-Dajjal (the False Messiah / Antichrist), who falsely claims divinity. Jesus—the true Messiah—will pursue him, overtake him at the gate of Ludd, and end his tyranny forever.',
-        quote: '"Every non-believer who smells the odor of his [Jesus\'s] breath will die and his breath will reach as far as he is able to see. He will then search for him (Dajjal) until he catches hold of him at the gate of Ludd and kills him."',
+        summary: 'Before Jesus\'s descent, the world will face its greatest trial: Al-Masih ad-Dajjal (the False Messiah / Antichrist), who falsely claims divinity and deceives nations. Jesus—the true Messiah—will pursue the False Messiah and his armed forces, overtake him at the gate of Ludd, and end his tyranny forever, while sincere believers from the People of the Book unite with him in peace (Quran 4:159).',
+        quote: '"He [Jesus] will then search for him (the False Messiah, Dajjal) until he catches hold of him at the gate of Ludd and kills him."',
         refText: 'Sahih Muslim 2937a',
         refUrl: 'https://sunnah.com/muslim:2937a'
       },
       {
         id: 'stage-5',
         shortTitle: '5. Restoring Pure Truth',
-        headline: 'Clarifying His True Message & Uniting Humanity',
-        summary: 'Upon his return, Jesus (peace be upon him) will lovingly clarify the truth about himself: removing false claims that he was God or crucified, breaking the cross, abolishing the jizyah tax, and uniting all people of faith into one brotherhood worshipping the One True Creator.',
-        quote: '"By Him in Whose Hands my soul is, surely (Jesus,) the son of Mary will soon descend amongst you and will judge mankind justly (as a just ruler); he will break the Cross and kill the pigs and there will be no Jizya (taxation taken from non-Muslims). Money will be in abundance so that nobody will accept it, and a single prostration to Allah (in prayer) will be better than the whole world and whatever is in it."',
+        headline: 'Jesus Himself Clarifies His Message & Unites Humanity',
+        summary: 'As classical Sunni scholars (such as Imam an-Nawawi and Ibn Hajar) explain, Islam strictly forbids Muslims today from disrespecting churches or interfering with Christian neighbors (Quran 60:8, 22:40). Rather, when Jesus (peace be upon him) personally returns, he himself—whom Christians love and await—will testify that God saved him from the cross, restore the original Abrahamic dietary laws (which also prohibited pork in Leviticus 11:7), remove tribute taxes, and unite humanity in worshipping the One Creator.',
+        quote: '"By Him in Whose Hands my soul is, surely (Jesus,) the son of Mary will soon descend amongst you and will judge mankind justly (as a just ruler)... Money will be in abundance so that nobody will accept it, and a single prostration to Allah (in prayer) will be better than the whole world and whatever is in it."',
         refText: 'Sahih al-Bukhari 3448 & Sahih Muslim 155a',
         refUrl: 'https://sunnah.com/bukhari:3448'
       },
       {
         id: 'stage-6',
-        shortTitle: '6. 40 Years of Peace',
-        headline: 'Universal Peace, Justice & Earthly Blessing',
-        summary: 'Under the just leadership of Jesus (peace be upon him), wars will cease, hatred, jealousy, and malice will vanish from human hearts, and the earth will bring forth unprecedented agricultural blessings and safety.',
+        shortTitle: '6. Gog & Magog + Hajj',
+        headline: 'Deliverance From Gog & Magog & Performing the Pilgrimage (Hajj)',
+        summary: 'During Jesus\'s time on earth, God will command him to lead the believers to safety at Mount Tur when the corrupting tribes of Gog and Magog (Ya\'juj wa Ma\'juj) surge forth. Jesus and his companions will supplicate humbly to God, Who will remove Gog and Magog and send cleansing rain so the earth blossoms with abundance. Authentic Hadith also record that Jesus will perform the pilgrimage (Hajj and \'Umrah) to God\'s Sacred House.',
+        quote: '"Allah\'s Prophet, Jesus, and his companions will then beseech Allah... Then Allah will send rain which no house of clay or tent of camel hair will keep out, and it will wash the earth until it leaves it like a mirror." (Sahih Muslim 2937a) • "Surely the son of Mary will pronounce the Talbiyah for Hajj or \'Umrah..." (Sahih Muslim 1252a)',
+        refText: 'Sahih Muslim 2937a & Sahih Muslim 1252a',
+        refUrl: 'https://sunnah.com/muslim:1252a'
+      },
+      {
+        id: 'stage-7',
+        shortTitle: '7. 40 Years & Passing',
+        headline: '40 Years of Universal Peace, Justice & Natural Passing',
+        summary: 'Under the just leadership of Jesus (peace be upon him), wars will cease, hatred, jealousy, and malice will vanish from human hearts, and the earth will bring forth abundant blessings. After living on earth for forty years, he will pass away a natural death, and the believers will offer his funeral prayer.',
         quote: '"He will destroy the Antichrist and will live on the earth for forty years and then he will die. The Muslims will pray over him."',
         refText: 'Sunan Abi Dawud 4324 (Graded Sahih / Authentic)',
         refUrl: 'https://sunnah.com/abudawud:4324'
@@ -568,6 +608,59 @@
     let openQaIds = new Set([1, 2, 9]);
     let activeStageId = 'stage-1';
     let showGilbertese = true;
+
+    function showToast(msg) {
+      const toast = document.getElementById('share-toast');
+      toast.textContent = msg;
+      toast.classList.remove('hidden');
+      setTimeout(() => {
+        toast.classList.add('hidden');
+      }, 2800);
+    }
+
+    function shareViaWhatsApp(text, hashSection) {
+      const baseUrl = window.location.href.split('#')[0];
+      const targetUrl = hashSection ? `${baseUrl}#${hashSection}` : baseUrl;
+      const fullText = `${text}\n\nRead more: ${targetUrl}`;
+      const waUrl = `https://api.whatsapp.com/send?text=${encodeURIComponent(fullText)}`;
+      window.open(waUrl, '_blank', 'noopener,noreferrer');
+    }
+
+    function shareViaFacebook(text, hashSection) {
+      const baseUrl = window.location.href.split('#')[0];
+      const targetUrl = hashSection ? `${baseUrl}#${hashSection}` : baseUrl;
+      const fbUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(targetUrl)}&quote=${encodeURIComponent(text)}`;
+      window.open(fbUrl, '_blank', 'noopener,noreferrer');
+    }
+
+    function copyShareSnippet(text, hashSection) {
+      const baseUrl = window.location.href.split('#')[0];
+      const targetUrl = hashSection ? `${baseUrl}#${hashSection}` : baseUrl;
+      const payload = `${text}\n${targetUrl}`;
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(payload).then(() => {
+          showToast('Copied Q&A summary & link!');
+        }).catch(() => {
+          fallbackCopy(payload);
+        });
+      } else {
+        fallbackCopy(payload);
+      }
+    }
+
+    function fallbackCopy(text) {
+      const ta = document.createElement('textarea');
+      ta.value = text;
+      document.body.appendChild(ta);
+      ta.select();
+      try {
+        document.execCommand('copy');
+        showToast('Copied Q&A summary & link!');
+      } catch (e) {
+        showToast('Ready to share!');
+      }
+      document.body.removeChild(ta);
+    }
 
     function renderQaList() {
       const container = document.getElementById('qa-list-container');
@@ -607,11 +700,24 @@
               <blockquote class="bg-slate-50 border-l-4 border-emerald-600 p-3.5 rounded-r-lg text-xs sm:text-sm text-slate-800 italic">
                 ${item.quote}
               </blockquote>
-              <div class="flex items-center justify-between flex-wrap gap-2 pt-1">
-                <span class="text-xs font-semibold text-slate-500">Reference: ${item.sourceLabel}</span>
-                <a href="${item.sourceUrl}" target="_blank" rel="noopener noreferrer" class="text-xs font-bold text-emerald-700 hover:text-emerald-900 underline">
-                  Verify Source Text ↗
-                </a>
+              <div class="flex items-center justify-between flex-wrap gap-2 pt-2 border-t border-slate-100">
+                <div class="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-3">
+                  <span class="text-xs font-semibold text-slate-500">Reference: ${item.sourceLabel}</span>
+                  <a href="${item.sourceUrl}" target="_blank" rel="noopener noreferrer" class="text-xs font-bold text-emerald-700 hover:text-emerald-900 underline">
+                    Verify Source Text ↗
+                  </a>
+                </div>
+                <div class="flex items-center gap-1.5 no-print">
+                  <button type="button" data-wa-qa="${item.id}" class="wa-qa-btn px-2.5 py-1 rounded-lg bg-green-50 hover:bg-green-100 text-green-800 border border-green-200 text-xs font-semibold transition">
+                    WhatsApp
+                  </button>
+                  <button type="button" data-fb-qa="${item.id}" class="fb-qa-btn px-2.5 py-1 rounded-lg bg-blue-50 hover:bg-blue-100 text-blue-800 border border-blue-200 text-xs font-semibold transition">
+                    Facebook
+                  </button>
+                  <button type="button" data-cp-qa="${item.id}" class="cp-qa-btn px-2.5 py-1 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-semibold transition">
+                    Copy
+                  </button>
+                </div>
               </div>
             </div>
           </article>
@@ -627,6 +733,30 @@
             openQaIds.add(id);
           }
           renderQaList();
+        });
+      });
+
+      container.querySelectorAll('.wa-qa-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const id = Number(btn.getAttribute('data-wa-qa'));
+          const item = QA_ITEMS.find(x => x.id === id);
+          if (item) shareViaWhatsApp(`Mauri! ${item.question}\n${item.answer} (${item.sourceLabel})`, 'page-respect');
+        });
+      });
+
+      container.querySelectorAll('.fb-qa-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const id = Number(btn.getAttribute('data-fb-qa'));
+          const item = QA_ITEMS.find(x => x.id === id);
+          if (item) shareViaFacebook(`Mauri! ${item.question} — ${item.answer}`, 'page-respect');
+        });
+      });
+
+      container.querySelectorAll('.cp-qa-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const id = Number(btn.getAttribute('data-cp-qa'));
+          const item = QA_ITEMS.find(x => x.id === id);
+          if (item) copyShareSnippet(`${item.question}\n${item.answer}\nSource: ${item.sourceLabel}`, 'page-respect');
         });
       });
     }
@@ -662,6 +792,14 @@
           <blockquote class="bg-white border-l-4 border-emerald-600 p-3.5 rounded-r-lg text-xs sm:text-sm text-slate-800 italic shadow-sm">
             ${activeStage.quote}
           </blockquote>
+          <div class="flex items-center justify-end gap-2 pt-2 no-print">
+            <button id="btn-wa-stage" type="button" class="px-3 py-1 rounded-lg bg-green-50 hover:bg-green-100 text-green-800 border border-green-200 text-xs font-semibold transition">
+              Share Stage on WhatsApp
+            </button>
+            <button id="btn-fb-stage" type="button" class="px-3 py-1 rounded-lg bg-blue-50 hover:bg-blue-100 text-blue-800 border border-blue-200 text-xs font-semibold transition">
+              Share on Facebook
+            </button>
+          </div>
         </div>
       `;
 
@@ -671,6 +809,20 @@
           renderReturnStages();
         });
       });
+
+      const waStageBtn = document.getElementById('btn-wa-stage');
+      if (waStageBtn) {
+        waStageBtn.addEventListener('click', () => {
+          shareViaWhatsApp(`${activeStage.headline}: ${activeStage.summary} (${activeStage.refText})`, 'page-return');
+        });
+      }
+
+      const fbStageBtn = document.getElementById('btn-fb-stage');
+      if (fbStageBtn) {
+        fbStageBtn.addEventListener('click', () => {
+          shareViaFacebook(`${activeStage.headline}: ${activeStage.summary}`, 'page-return');
+        });
+      }
     }
 
     function switchPage(pageId) {
@@ -703,6 +855,13 @@
       if (['page-respect', 'page-return', 'page-sunnah'].includes(initialHash)) {
         switchPage(initialHash);
       }
+
+      // Top & Footer Share Buttons
+      const defaultShareText = "Mauri! Discover how deeply Islam honors Jesus ('Isa / Iesu, peace be upon him) and awaits his physical return to earth:";
+      document.getElementById('btn-share-whatsapp-top').addEventListener('click', () => shareViaWhatsApp(defaultShareText, ''));
+      document.getElementById('btn-share-facebook-top').addEventListener('click', () => shareViaFacebook(defaultShareText, ''));
+      document.getElementById('btn-share-whatsapp-footer').addEventListener('click', () => shareViaWhatsApp(defaultShareText, ''));
+      document.getElementById('btn-share-facebook-footer').addEventListener('click', () => shareViaFacebook(defaultShareText, ''));
 
       // Nav tabs
       document.querySelectorAll('.nav-tab').forEach(tab => {
