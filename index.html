@@ -1,0 +1,896 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mauri! Discovering Jesus ('Isa / Iesu) in the Quran & Authentic Sunnah</title>
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcode-generator/1.4.4/qrcode.min.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Amiri:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: #f8fafc;
+      color: #0f172a;
+    }
+    .arabic-font {
+      font-family: 'Amiri', Georgia, serif;
+    }
+    @media print {
+      .no-print { display: none !important; }
+      .print-expand { display: block !important; }
+      body { background: #ffffff; }
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col bg-slate-50 text-slate-900">
+
+  <!-- Top Gilbertese & Sunni Greeting Banner -->
+  <header class="bg-gradient-to-r from-emerald-900 via-teal-800 to-cyan-900 text-white shadow-lg relative overflow-hidden">
+    <div class="max-w-4xl mx-auto px-4 py-6 sm:py-8 relative z-10">
+      <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
+        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-emerald-700/70 text-emerald-100 border border-emerald-500/40">
+          <span>🌴</span> Mauri! Welcome to Our Pacific Bridge of Faith
+        </span>
+        <div class="flex items-center gap-2 no-print">
+          <button id="btn-lang-toggle" type="button" class="px-3 py-1 rounded-full text-xs font-medium bg-white/15 hover:bg-white/25 text-white transition border border-white/20">
+            Show Gilbertese Notes: ON
+          </button>
+          <button id="btn-print-page" type="button" class="px-3 py-1 rounded-full text-xs font-medium bg-amber-400/20 hover:bg-amber-400/30 text-amber-200 transition border border-amber-300/30">
+            Save Offline / Print
+          </button>
+        </div>
+      </div>
+
+      <h1 class="text-2xl sm:text-4xl font-extrabold tracking-tight leading-tight mb-2">
+        Jesus (<span class="text-amber-300">'Isa</span> / <span class="text-amber-300">Iesu</span>), Peace Be Upon Him, in Islam
+      </h1>
+      <p class="text-sm sm:text-base text-emerald-100 max-w-2xl leading-relaxed">
+        Did you know that no Muslim is truly a Muslim without loving, honoring, and believing in Jesus Christ (peace be upon him) and awaiting his physical return to earth? Explore directly from the <strong>Noble Quran</strong> and the <strong>Authentic Prophetic Sunnah (Hadith)</strong>.
+      </p>
+
+      <!-- Gilbertese Cultural Bridge Note -->
+      <div id="gilbertese-banner" class="mt-4 p-3.5 rounded-xl bg-white/10 backdrop-blur-sm border border-white/15 text-xs sm:text-sm text-emerald-50 flex items-start gap-3">
+        <span class="text-lg leading-none mt-0.5">🤝</span>
+        <div>
+          <strong class="text-amber-200">Mauri ao Tekeraoi! (Greetings &amp; Peace to Kiribati):</strong>
+          In Gilbertese (<em>Te taetae ni Kiribati</em>), Jesus is known as <strong>Iesu Kristo</strong>. In the Arabic Quran, he is honored as <strong>'Isa Al-Masih</strong> (Jesus the Messiah, peace be upon him). This page is ultra-lightweight so you can read comfortably even on low mobile data.
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Sticky Navigation Tabs (Multi-Page Switcher inside Single File) -->
+  <nav class="sticky top-0 z-30 bg-white/95 backdrop-blur border-b border-slate-200 shadow-sm no-print" aria-label="Main Navigation">
+    <div class="max-w-4xl mx-auto px-2 sm:px-4">
+      <div class="flex items-center justify-between overflow-x-auto py-2 gap-1 sm:gap-2">
+        <button type="button" data-tab="page-respect" class="nav-tab flex-1 min-w-fit px-3 py-2 rounded-lg text-xs sm:text-sm font-semibold transition flex items-center justify-center gap-1.5 bg-emerald-700 text-white shadow-sm">
+          <span>📖</span>
+          <span>1. Honor of Jesus (10 Q&amp;As)</span>
+        </button>
+        <button type="button" data-tab="page-return" class="nav-tab flex-1 min-w-fit px-3 py-2 rounded-lg text-xs sm:text-sm font-semibold transition flex items-center justify-center gap-1.5 text-slate-700 hover:bg-slate-100">
+          <span>🌅</span>
+          <span>2. His Return to Earth</span>
+        </button>
+        <button type="button" data-tab="page-sunnah" class="nav-tab flex-1 min-w-fit px-3 py-2 rounded-lg text-xs sm:text-sm font-semibold transition flex items-center justify-center gap-1.5 text-slate-700 hover:bg-slate-100">
+          <span>🧭</span>
+          <span>3. Quran, Hadith &amp; Websites</span>
+        </button>
+        <button type="button" data-tab="page-hat-qr" class="nav-tab flex-1 min-w-fit px-3 py-2 rounded-lg text-xs sm:text-sm font-semibold transition flex items-center justify-center gap-1.5 text-slate-700 hover:bg-slate-100">
+          <span>🧢</span>
+          <span>4. Hat QR Badge &amp; Contact</span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Content Container -->
+  <main class="flex-1 max-w-4xl w-full mx-auto px-4 py-6 sm:py-8">
+
+    <!-- ==========================================
+         PAGE 1: REVERENCE FOR JESUS (10 Q&As)
+         ========================================== -->
+    <section id="page-respect" class="page-section space-y-6">
+      <!-- Intro Highlight Card -->
+      <div class="bg-white rounded-2xl p-5 sm:p-6 shadow-sm border border-emerald-100">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-slate-100 pb-4 mb-4">
+          <div>
+            <span class="text-xs font-bold uppercase tracking-wider text-emerald-700">Page 1 of 4 • Shared Reverence</span>
+            <h2 class="text-xl sm:text-2xl font-bold text-slate-900 mt-0.5">How Islam Honors Jesus ('Isa, Peace Be Upon Him)</h2>
+          </div>
+          <div class="flex items-center gap-2 no-print">
+            <button id="btn-expand-all" type="button" class="px-3 py-1.5 rounded-lg text-xs font-semibold bg-emerald-50 text-emerald-800 hover:bg-emerald-100 border border-emerald-200 transition">
+              Expand All 10
+            </button>
+            <button id="btn-collapse-all" type="button" class="px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-100 text-slate-700 hover:bg-slate-200 border border-slate-200 transition">
+              Collapse All
+            </button>
+          </div>
+        </div>
+
+        <blockquote class="bg-emerald-50/70 border-l-4 border-emerald-600 p-4 rounded-r-xl text-slate-800 text-sm sm:text-base leading-relaxed">
+          <p class="italic font-medium">
+            "Both in this world and in the Hereafter, I am the nearest of all the people to Jesus, the son of Mary. The prophets are paternal brothers; their mothers are different, <span class="text-emerald-900 font-semibold">yet their religion is one.</span>"
+          </p>
+          <footer class="mt-2 text-xs text-slate-600 font-semibold">
+            — Prophet Muhammad (ﷺ), narrated by his Companion Abu Hurairah (may Allah be pleased with him) in
+            <a href="https://sunnah.com/bukhari:3443" target="_blank" rel="noopener noreferrer" class="text-emerald-700 underline hover:text-emerald-900">Sahih al-Bukhari 3443</a>
+          </footer>
+        </blockquote>
+
+        <!-- Search and Filter Controls -->
+        <div class="mt-5 flex flex-col sm:flex-row gap-3 items-stretch sm:items-center justify-between no-print">
+          <div class="relative flex-1">
+            <input id="qa-search-input" type="text" placeholder="Search questions (e.g., Mary, miracles, Messiah, prayer)..." class="w-full pl-9 pr-4 py-2 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-600 bg-slate-50" />
+            <span class="absolute left-3 top-2.5 text-slate-400 text-sm">🔍</span>
+          </div>
+          <div class="flex flex-wrap gap-1.5" id="qa-category-filters">
+            <button type="button" data-cat="all" class="cat-btn px-3 py-1.5 rounded-lg text-xs font-semibold bg-emerald-700 text-white">All (10)</button>
+            <button type="button" data-cat="honor" class="cat-btn px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-100 text-slate-700 hover:bg-slate-200">Honor &amp; Mary</button>
+            <button type="button" data-cat="miracles" class="cat-btn px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-100 text-slate-700 hover:bg-slate-200">Miracles &amp; Message</button>
+            <button type="button" data-cat="return" class="cat-btn px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-100 text-slate-700 hover:bg-slate-200">Return &amp; Unity</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 10 Q&As Accordion List -->
+      <div id="qa-list-container" class="space-y-3"></div>
+
+      <!-- Bottom Call to Action to Go to Page 2 (Return of Jesus) -->
+      <div class="bg-gradient-to-r from-amber-50 via-emerald-50 to-teal-50 rounded-2xl p-5 sm:p-6 border border-emerald-200 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+        <div>
+          <span class="text-xs font-bold uppercase tracking-wider text-emerald-800">Next Deep Dive</span>
+          <h3 class="text-lg font-bold text-slate-900 mt-0.5">What Will Jesus (PBUH) Do When He Returns to Earth?</h3>
+          <p class="text-xs sm:text-sm text-slate-600 mt-1">
+            Read the complete timeline of his descent, how he will defeat the False Messiah, and his 40-year reign of justice and peace from the Quran and Sahih Hadith.
+          </p>
+        </div>
+        <button id="btn-goto-return" type="button" class="shrink-0 px-4 py-2.5 rounded-xl bg-emerald-700 hover:bg-emerald-800 text-white text-sm font-semibold shadow-sm transition">
+          Read Page 2: His Return →
+        </button>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         PAGE 2: THE SECOND COMING OF JESUS TO EARTH
+         ========================================== -->
+    <section id="page-return" class="page-section hidden space-y-6">
+      <div class="bg-white rounded-2xl p-5 sm:p-6 shadow-sm border border-emerald-100">
+        <span class="text-xs font-bold uppercase tracking-wider text-emerald-700">Page 2 of 4 • Prophetic Eschatology in Sunni Islam</span>
+        <h2 class="text-xl sm:text-2xl font-bold text-slate-900 mt-1">
+          The Return of Jesus ('Isa, Peace Be Upon Him) to Earth
+        </h2>
+        <p class="text-sm sm:text-base text-slate-600 mt-2 leading-relaxed">
+          One of the strongest bonds between Muslims and Christians is the shared conviction that Jesus the Messiah (peace be upon him) is alive and will physically return to earth. In Sunni Islam—grounded strictly in the <strong>Noble Quran</strong> and consecutive authentic Hadith (<em>Mutawatir</em>) transmitted by the noble Companions—his return is a major sign of the Last Hour and a triumph of truth, peace, and justice.
+        </p>
+
+        <!-- Key Hadith Banner -->
+        <blockquote class="mt-4 bg-amber-50/80 border-l-4 border-amber-500 p-4 rounded-r-xl text-slate-800 text-sm sm:text-base leading-relaxed">
+          <p class="italic font-medium">
+            "By Him in Whose Hands my soul is, surely (Jesus,) the son of Mary (peace be upon him) will soon descend amongst you and will judge mankind justly (as a just ruler)..."
+          </p>
+          <footer class="mt-2 text-xs text-slate-600 font-semibold">
+            — Prophet Muhammad (ﷺ), narrated by Abu Hurairah (may Allah be pleased with him) in
+            <a href="https://sunnah.com/bukhari:3448" target="_blank" rel="noopener noreferrer" class="text-emerald-700 underline">Sahih al-Bukhari 3448</a> &amp;
+            <a href="https://sunnah.com/muslim:155a" target="_blank" rel="noopener noreferrer" class="text-emerald-700 underline">Sahih Muslim 155a</a>
+          </footer>
+        </blockquote>
+      </div>
+
+      <!-- Interactive Step-by-Step Timeline of What Jesus Will Do -->
+      <div class="bg-white rounded-2xl p-5 sm:p-6 shadow-sm border border-slate-200">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-5">
+          <div>
+            <h3 class="text-lg font-bold text-slate-900">7 Prophetic Stages of Jesus's Return &amp; Mission on Earth</h3>
+            <p class="text-xs sm:text-sm text-slate-500">Click any stage below to view the full scriptural text and verified links.</p>
+          </div>
+          <span class="text-xs font-semibold px-2.5 py-1 rounded-full bg-emerald-50 text-emerald-800 border border-emerald-200 w-fit">
+            100% Authentic Quran &amp; Sahih Hadith
+          </span>
+        </div>
+
+        <!-- Stage Filter Pills -->
+        <div id="return-stage-tabs" class="grid grid-cols-2 sm:grid-cols-4 gap-2 mb-5 no-print"></div>
+
+        <!-- Active Stage Detail Card -->
+        <div id="return-stage-detail" class="rounded-xl bg-slate-50 border border-slate-200 p-4 sm:p-5"></div>
+
+        <!-- Full Printable / Scannable Summary Table of All 7 Events -->
+        <div class="mt-6 overflow-x-auto">
+          <h4 class="text-sm font-bold uppercase tracking-wider text-slate-500 mb-3">Complete Summary of What Jesus (PBUH) Will Do Upon His Return</h4>
+          <table class="w-full text-left border-collapse text-xs sm:text-sm">
+            <thead>
+              <tr class="bg-emerald-900 text-white">
+                <th class="p-3 rounded-tl-lg font-semibold">Event / Action</th>
+                <th class="p-3 font-semibold">What Islamic Sources Teach</th>
+                <th class="p-3 rounded-tr-lg font-semibold">Direct Source Reference</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-200 bg-white">
+              <tr class="hover:bg-slate-50">
+                <td class="p-3 font-semibold text-slate-900">1. Raised Alive by God</td>
+                <td class="p-3 text-slate-700">God saved Jesus from crucifixion, raised him alive to heaven, and appointed his return as a sign of the Hour.</td>
+                <td class="p-3"><a href="https://quran.com/ali-imran/45-55" target="_blank" rel="noopener noreferrer" class="text-emerald-700 underline font-medium">Quran 3:55</a>, <a href="https://legacy.quran.com/43/61-67" target="_blank" rel="noopener noreferrer" class="text-emerald-700 underline font-medium">Quran 43:61</a></td>
+              </tr>
+              <tr class="hover:bg-slate-50">
+                <td class="p-3 font-semibold text-slate-900">2. Physical Descent from Heaven</td>
+                <td class="p-3 text-slate-700">He will descend at the white minaret east of Damascus, resting his hands on the wings of two angels.</td>
+                <td class="p-3"><a href="https://sunnah.com/muslim:2937a" target="_blank" rel="noopener noreferrer" class="text-emerald-700 underline font-medium">Sahih Muslim 2937a</a></td>
+              </tr>
+              <tr class="hover:bg-slate-50">
+                <td class="p-3 font-semibold text-slate-900">3. Praying With the Believers</td>
+                <td class="p-3 text-slate-700">He will join the believers at dawn prayer, honoring the community before ruling by God's pure law.</td>
+                <td class="p-3"><a href="https://sunnah.com/muslim:155f" target="_blank" rel="noopener noreferrer" class="text-emerald-700 underline font-medium">Sahih Muslim 155f</a>, <a href="https://sunnah.com/bukhari:3449" target="_blank" rel="noopener noreferrer" class="text-emerald-700 underline font-medium">Bukhari 3449</a></td>
+              </tr>
+              <tr class="hover:bg-slate-50">
+                <td class="p-3 font-semibold text-slate-900">4. Defeating the False Messiah</td>
+                <td class="p-3 text-slate-700">He will confront and end the deception of the Antichrist (<em>Al-Masih ad-Dajjal</em>) at the gate of Ludd.</td>
+                <td class="p-3"><a href="https://sunnah.com/muslim:2937a" target="_blank" rel="noopener noreferrer" class="text-emerald-700 underline font-medium">Sahih Muslim 2937a</a></td>
+              </tr>
+              <tr class="hover:bg-slate-50">
+                <td class="p-3 font-semibold text-slate-900">5. Uniting Humanity on Monotheism</td>
+                <td class="p-3 text-slate-700">He will clarify the truth about his message, break false symbols, abolish tribute taxes, and unite believers.</td>
+                <td class="p-3"><a href="https://sunnah.com/bukhari:3448" target="_blank" rel="noopener noreferrer" class="text-emerald-700 underline font-medium">Sahih al-Bukhari 3448</a></td>
+              </tr>
+              <tr class="hover:bg-slate-50">
+                <td class="p-3 font-semibold text-slate-900">6. 40 Years of Peace &amp; Blessing</td>
+                <td class="p-3 text-slate-700">He will live on earth for 40 years; hatred and envy will disappear, and the earth will bring forth abundant blessings.</td>
+                <td class="p-3"><a href="https://sunnah.com/abudawud:4324" target="_blank" rel="noopener noreferrer" class="text-emerald-700 underline font-medium">Sunan Abi Dawud 4324</a></td>
+              </tr>
+              <tr class="hover:bg-slate-50">
+                <td class="p-3 font-semibold text-slate-900">7. Natural Passing &amp; Honor</td>
+                <td class="p-3 text-slate-700">After his blessed reign of justice, he will pass away naturally and believers will offer his funeral prayer.</td>
+                <td class="p-3"><a href="https://sunnah.com/abudawud:4324" target="_blank" rel="noopener noreferrer" class="text-emerald-700 underline font-medium">Sunan Abi Dawud 4324</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="flex justify-between items-center no-print">
+        <button type="button" data-goto="page-respect" class="page-jump-btn px-4 py-2 rounded-xl bg-slate-200 hover:bg-slate-300 text-slate-800 text-xs sm:text-sm font-semibold transition">
+          ← Back to 10 Q&amp;As
+        </button>
+        <button type="button" data-goto="page-sunnah" class="page-jump-btn px-4 py-2 rounded-xl bg-emerald-700 hover:bg-emerald-800 text-white text-xs sm:text-sm font-semibold transition">
+          Page 3: Quran, Sunnah &amp; Websites →
+        </button>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         PAGE 3: QURAN, AUTHENTIC SUNNAH, COMPANIONS & BEST WEBSITES
+         ========================================== -->
+    <section id="page-sunnah" class="page-section hidden space-y-6">
+      <!-- Sunni Principle & Companions Explanation -->
+      <div class="bg-white rounded-2xl p-5 sm:p-6 shadow-sm border border-emerald-100 space-y-4">
+        <span class="text-xs font-bold uppercase tracking-wider text-emerald-700">Page 3 of 4 • Authentic Foundation &amp; Further Reading</span>
+        <h2 class="text-xl sm:text-2xl font-bold text-slate-900">
+          Why We Follow the Quran, Authentic Hadith &amp; Honor All Companions
+        </h2>
+        <p class="text-sm sm:text-base text-slate-700 leading-relaxed">
+          Mainstream Islam—followed by roughly 90% of the world's Muslims (<em>Ahlus Sunnah wal Jama'ah</em>, or Sunni Islam)—rests directly on two clear, preserved foundations:
+        </p>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div class="p-4 rounded-xl bg-emerald-50/70 border border-emerald-200">
+            <h3 class="font-bold text-emerald-950 text-base flex items-center gap-2">
+              <span>📘</span> 1. The Noble Quran
+            </h3>
+            <p class="text-xs sm:text-sm text-slate-700 mt-1.5 leading-relaxed">
+              The verbatim word of God revealed to Prophet Muhammad (ﷺ), which confirms the truth of the earlier revelations given to Abraham, Moses, and Jesus (peace be upon them all) and calls humanity to worship the One Creator directly without intermediaries.
+            </p>
+          </div>
+          <div class="p-4 rounded-xl bg-amber-50/70 border border-amber-200">
+            <h3 class="font-bold text-amber-950 text-base flex items-center gap-2">
+              <span>📜</span> 2. The Authentic Sunnah (Hadith)
+            </h3>
+            <p class="text-xs sm:text-sm text-slate-700 mt-1.5 leading-relaxed">
+              The verified teachings, prayers, and example of Prophet Muhammad (ﷺ), preserved in collections like <a href="https://sunnah.com/bukhari:3448" target="_blank" rel="noopener noreferrer" class="text-emerald-800 underline font-semibold">Sahih al-Bukhari</a> and <a href="https://sunnah.com/muslim:155a" target="_blank" rel="noopener noreferrer" class="text-emerald-800 underline font-semibold">Sahih Muslim</a> through rigorous chains of eyewitness verification.
+            </p>
+          </div>
+        </div>
+
+        <!-- Loving All Companions (Parallel to Jesus's Disciples) -->
+        <div class="p-4 sm:p-5 rounded-xl bg-slate-50 border border-slate-200">
+          <h3 class="font-bold text-slate-900 text-base flex items-center gap-2">
+            <span>🕊️</span> Honoring Both the Disciples of Jesus &amp; the Companions of Muhammad (ﷺ)
+          </h3>
+          <p class="text-xs sm:text-sm text-slate-700 mt-2 leading-relaxed">
+            In the Quran (<a href="https://quran.com/ali-imran/45-55" target="_blank" rel="noopener noreferrer" class="text-emerald-700 underline font-medium">Surah Ali 'Imran 3:52</a>), God praises the faithful disciples of Jesus (<em>Al-Hawariyyun</em>) who stood by him and said: <em>"We are supporters of Allah; we have believed in Allah and testify that we are submitting to Him."</em>
+          </p>
+          <p class="text-xs sm:text-sm text-slate-700 mt-2 leading-relaxed">
+            In the exact same spirit, Sunni Muslims love, respect, and pray for <strong>all the Companions (<em>Sahabah</em>) and family of Prophet Muhammad (ﷺ)</strong>—including Abu Bakr, 'Umar, 'Uthman, 'Ali, Mother of the Believers 'Aishah, and Abu Hurairah (may Allah be pleased with them all)—and never speak negatively about any of the men and women who sacrificed to preserve God's message for humanity.
+          </p>
+        </div>
+      </div>
+
+      <!-- Best Websites for Kiribati Readers -->
+      <div class="bg-white rounded-2xl p-5 sm:p-6 shadow-sm border border-slate-200">
+        <h3 class="text-lg sm:text-xl font-bold text-slate-900">
+          Trusted, Fast-Loading Websites to Explore More
+        </h3>
+        <p class="text-xs sm:text-sm text-slate-600 mt-1 mb-4">
+          Every website below presents mainstream Sunni Islam directly from the Quran and authentic Hadith, is respectful toward Christians, and works smoothly on mobile phones in Kiribati:
+        </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <!-- Site 1 -->
+          <a href="https://www.whyislam.org/jesus-pbuh/" target="_blank" rel="noopener noreferrer" class="group block p-4 rounded-xl border border-slate-200 hover:border-emerald-500 hover:shadow-md transition bg-slate-50/60">
+            <div class="flex items-center justify-between">
+              <span class="font-bold text-emerald-900 group-hover:text-emerald-700 text-base">1. WhyIslam.org — Jesus in Islam</span>
+              <span class="text-xs font-semibold px-2 py-0.5 rounded bg-emerald-100 text-emerald-800">Best First Read</span>
+            </div>
+            <p class="text-xs sm:text-sm text-slate-600 mt-2">
+              Written specifically for Christian readers in clear, warm English. Covers Jesus's miraculous birth, miracles, teachings, and honorable status in Islam without heavy jargon.
+            </p>
+            <span class="inline-block mt-2 text-xs font-semibold text-emerald-700 underline">Visit whyislam.org/jesus-pbuh →</span>
+          </a>
+
+          <!-- Site 2 -->
+          <a href="https://quran.com/ali-imran/45-55" target="_blank" rel="noopener noreferrer" class="group block p-4 rounded-xl border border-slate-200 hover:border-emerald-500 hover:shadow-md transition bg-slate-50/60">
+            <div class="flex items-center justify-between">
+              <span class="font-bold text-emerald-900 group-hover:text-emerald-700 text-base">2. Quran.com (Surah 3 &amp; Surah 19)</span>
+              <span class="text-xs font-semibold px-2 py-0.5 rounded bg-amber-100 text-amber-800">Ultra-Fast on 3G</span>
+            </div>
+            <p class="text-xs sm:text-sm text-slate-600 mt-2">
+              Read the Clear Quran English translation side-by-side with word-by-word meanings and footnotes. Start directly with <em>Surah Ali 'Imran (3:45–55)</em> and <em>Surah Maryam (Chapter 19)</em>.
+            </p>
+            <span class="inline-block mt-2 text-xs font-semibold text-emerald-700 underline">Read Surah Ali 'Imran 3:45–55 →</span>
+          </a>
+
+          <!-- Site 3 -->
+          <a href="https://www.islamreligion.com/en/articles/31/jesus-in-islam-part-1" target="_blank" rel="noopener noreferrer" class="group block p-4 rounded-xl border border-slate-200 hover:border-emerald-500 hover:shadow-md transition bg-slate-50/60">
+            <div class="flex items-center justify-between">
+              <span class="font-bold text-emerald-900 group-hover:text-emerald-700 text-base">3. IslamReligion.com — 3-Part Series</span>
+              <span class="text-xs font-semibold px-2 py-0.5 rounded bg-sky-100 text-sky-800">Live Chat Support</span>
+            </div>
+            <p class="text-xs sm:text-sm text-slate-600 mt-2">
+              Features a 3-part series on Jesus in Islam grounded in Quran and Sahih Hadith, plus a respectful 1-on-1 live chat for curious readers who have follow-up questions.
+            </p>
+            <span class="inline-block mt-2 text-xs font-semibold text-emerald-700 underline">Read the 3-Part Article Series →</span>
+          </a>
+
+          <!-- Site 4 -->
+          <a href="https://sunnah.com/bukhari:3448" target="_blank" rel="noopener noreferrer" class="group block p-4 rounded-xl border border-slate-200 hover:border-emerald-500 hover:shadow-md transition bg-slate-50/60">
+            <div class="flex items-center justify-between">
+              <span class="font-bold text-emerald-900 group-hover:text-emerald-700 text-base">4. Sunnah.com — Prophetic Hadith</span>
+              <span class="text-xs font-semibold px-2 py-0.5 rounded bg-purple-100 text-purple-800">Primary Sources</span>
+            </div>
+            <p class="text-xs sm:text-sm text-slate-600 mt-2">
+              Verify every authentic statement of Prophet Muhammad (ﷺ) regarding Jesus (peace be upon him) in <em>Sahih al-Bukhari</em> and <em>Sahih Muslim</em> with full grades and references.
+            </p>
+            <span class="inline-block mt-2 text-xs font-semibold text-emerald-700 underline">Browse Sahih al-Bukhari 3448 →</span>
+          </a>
+
+          <!-- Site 5 -->
+          <a href="https://yaqeeninstitute.org/read/blog/who-is-jesus-in-islam" target="_blank" rel="noopener noreferrer" class="group block p-4 rounded-xl border border-slate-200 hover:border-emerald-500 hover:shadow-md transition bg-slate-50/60 md:col-span-2">
+            <div class="flex items-center justify-between">
+              <span class="font-bold text-emerald-900 group-hover:text-emerald-700 text-base">5. Yaqeen Institute — Who Is Jesus in Islam?</span>
+              <span class="text-xs font-semibold px-2 py-0.5 rounded bg-teal-100 text-teal-800">In-Depth Research</span>
+            </div>
+            <p class="text-xs sm:text-sm text-slate-600 mt-2">
+              Offers accessible essays and infographics on <a href="https://yaqeeninstitute.org/read/paper/jesus-a-foundation-for-dialogue-between-muslims-and-christians" target="_blank" rel="noopener noreferrer" class="underline text-emerald-800">Jesus as a Foundation for Dialogue Between Muslims and Christians</a> and <a href="https://yaqeeninstitute.org/read/paper/finding-and-following-jesus-the-muslim-claim-to-the-messiah" target="_blank" rel="noopener noreferrer" class="underline text-emerald-800">Finding and Following Jesus: The Muslim Claim to the Messiah</a>.
+            </p>
+            <span class="inline-block mt-2 text-xs font-semibold text-emerald-700 underline">Explore Yaqeen Institute Collection →</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="flex justify-between items-center no-print">
+        <button type="button" data-goto="page-return" class="page-jump-btn px-4 py-2 rounded-xl bg-slate-200 hover:bg-slate-300 text-slate-800 text-xs sm:text-sm font-semibold transition">
+          ← Back to Page 2: His Return
+        </button>
+        <button type="button" data-goto="page-hat-qr" class="page-jump-btn px-4 py-2 rounded-xl bg-emerald-700 hover:bg-emerald-800 text-white text-xs sm:text-sm font-semibold transition">
+          Page 4: Hat QR Badge &amp; Contact →
+        </button>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         PAGE 4: HAT QR CODE STUDIO & CONTACT VCF BRIDGE
+         ========================================== -->
+    <section id="page-hat-qr" class="page-section hidden space-y-6">
+      <div class="bg-white rounded-2xl p-5 sm:p-6 shadow-sm border border-emerald-100">
+        <span class="text-xs font-bold uppercase tracking-wider text-emerald-700">Page 4 of 4 • Share This Page or Print Your Hat Patch</span>
+        <h2 class="text-xl sm:text-2xl font-bold text-slate-900 mt-1">
+          Hat QR Code Badge Generator &amp; GitHub Pages Setup
+        </h2>
+        <p class="text-sm text-slate-600 mt-1.5 leading-relaxed">
+          Enter your GitHub Pages URL below to generate a high-contrast, curved-hat-friendly QR badge. Anyone scanning your hat can jump straight to the 10 Q&amp;As or directly to the page on Jesus's Return (`#page-return`).
+        </p>
+
+        <div class="mt-5 grid grid-cols-1 md:grid-cols-2 gap-6 items-start">
+          <!-- Left: Controls -->
+          <div class="space-y-4">
+            <div>
+              <label for="qr-url-input" class="block text-xs font-bold uppercase text-slate-600 mb-1">1. Your GitHub Pages URL</label>
+              <input id="qr-url-input" type="url" value="https://yourusername.github.io/isa/" class="w-full px-3.5 py-2 rounded-xl border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-600" />
+              <p class="text-xs text-slate-500 mt-1">Tip: Keep the repo name short (e.g., <code>/isa</code> or <code>/iesu</code>) so the QR code squares stay large and easy to scan on a hat.</p>
+            </div>
+
+            <div>
+              <label for="qr-target-select" class="block text-xs font-bold uppercase text-slate-600 mb-1">2. Landing Page When Scanned</label>
+              <select id="qr-target-select" class="w-full px-3.5 py-2 rounded-xl border border-slate-300 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-emerald-600">
+                <option value="">Open Page 1: 10 Q&amp;As on Jesus in Islam (Default)</option>
+                <option value="#page-return">Open Page 2 Directly: The Return of Jesus to Earth</option>
+                <option value="#page-sunnah">Open Page 3 Directly: Quran, Hadith &amp; Websites</option>
+              </select>
+            </div>
+
+            <div>
+              <label for="qr-caption-select" class="block text-xs font-bold uppercase text-slate-600 mb-1">3. Hat Patch Micro-Hook Text</label>
+              <select id="qr-caption-select" class="w-full px-3.5 py-2 rounded-xl border border-slate-300 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-emerald-600">
+                <option value="Mauri! Who is Iesu ('Isa) in the Quran?">Mauri! Who is Iesu ('Isa) in the Quran?</option>
+                <option value="We Love &amp; Await Jesus Too — Scan Why">We Love &amp; Await Jesus Too — Scan Why</option>
+                <option value="10 Questions on Jesus in Islam">10 Questions on Jesus in Islam</option>
+                <option value="Jesus Will Return — Read the Prophecy">Jesus Will Return — Read the Prophecy</option>
+              </select>
+            </div>
+
+            <div>
+              <label for="vcf-url-input" class="block text-xs font-bold uppercase text-slate-600 mb-1">4. Optional Link to Your Contact Card (contact.vcf)</label>
+              <input id="vcf-url-input" type="text" placeholder="e.g., https://yourusername.github.io/contact.vcf" class="w-full px-3.5 py-2 rounded-xl border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-600" />
+            </div>
+
+            <div class="flex flex-wrap gap-2 pt-1">
+              <button id="btn-update-qr" type="button" class="px-4 py-2 rounded-xl bg-emerald-700 hover:bg-emerald-800 text-white text-xs sm:text-sm font-semibold shadow-sm transition">
+                Update Hat Badge Preview
+              </button>
+              <button id="btn-print-badge" type="button" class="px-4 py-2 rounded-xl bg-slate-800 hover:bg-slate-900 text-white text-xs sm:text-sm font-semibold shadow-sm transition">
+                Print / Save Hat Patch
+              </button>
+            </div>
+          </div>
+
+          <!-- Right: Live Printable Hat Patch Preview -->
+          <div class="flex flex-col items-center justify-center bg-slate-100 rounded-2xl p-5 border border-slate-200">
+            <span class="text-xs font-semibold text-slate-500 mb-2 no-print">Live Hat Patch Preview (High-Contrast Level H)</span>
+            <div id="hat-patch-card" class="bg-white border-4 border-emerald-900 rounded-2xl p-4 shadow-md text-center max-w-xs w-full">
+              <div class="text-xs font-extrabold uppercase tracking-widest text-emerald-800 mb-1">🌴 Mauri • Peace</div>
+              <div id="qr-canvas-holder" class="flex items-center justify-center mx-auto my-2 p-2 bg-white rounded-lg"></div>
+              <p id="hat-patch-caption" class="text-sm font-extrabold text-slate-900 leading-snug mt-1">
+                Mauri! Who is Iesu ('Isa) in the Quran?
+              </p>
+              <p id="hat-patch-url-display" class="text-[11px] font-mono text-slate-500 mt-1 break-all">
+                https://yourusername.github.io/isa/
+              </p>
+            </div>
+
+            <div id="vcf-link-preview" class="hidden mt-4 w-full">
+              <a id="vcf-anchor" href="https://github.com" target="_blank" rel="noopener noreferrer" class="block w-full text-center py-2.5 px-4 rounded-xl bg-teal-700 hover:bg-teal-800 text-white text-xs font-semibold transition">
+                📇 Save My Contact Card (contact.vcf)
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-slate-900 text-slate-300 py-6 px-4 text-xs border-t border-slate-800 mt-10">
+    <div class="max-w-4xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div>
+        <p class="font-semibold text-white">Built on the Noble Quran &amp; Authentic Prophetic Sunnah</p>
+        <p class="text-slate-400 mt-0.5">Honoring Jesus ('Isa / Iesu, peace be upon him), all Prophets of God, and all noble Companions.</p>
+      </div>
+      <div class="flex flex-wrap gap-3">
+        <a href="https://quran.com/ali-imran/45-55" target="_blank" rel="noopener noreferrer" class="text-emerald-400 hover:underline">Quran.com</a>
+        <a href="https://sunnah.com/bukhari:3448" target="_blank" rel="noopener noreferrer" class="text-emerald-400 hover:underline">Sunnah.com</a>
+        <a href="https://www.whyislam.org/jesus-pbuh/" target="_blank" rel="noopener noreferrer" class="text-emerald-400 hover:underline">WhyIslam.org</a>
+        <a href="https://www.islamreligion.com/en/articles/31/jesus-in-islam-part-1" target="_blank" rel="noopener noreferrer" class="text-emerald-400 hover:underline">IslamReligion.com</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- All Application Data & Interactive Logic -->
+  <script>
+    const QA_ITEMS = [
+      {
+        id: 1,
+        category: 'honor',
+        question: '1. Do Muslims truly believe in and love Jesus (Iesu / \'Isa)?',
+        shortTag: 'Pillar of Faith',
+        answer: 'Yes—a person cannot be a Muslim without believing in and honoring Jesus (\'Isa, peace be upon him) as one of God\'s greatest and mightiest Messengers (Ulul \'Azm). Whenever Muslims mention his name, they immediately say "Alayhis Salam" (Peace be upon him) out of deep love and reverence.',
+        quote: '"Say, [O believers], \'We have believed in Allah and what has been revealed to us and what has been revealed to Abraham and Ishmael and Isaac and Jacob and the Descendants, and what was given to Moses and Jesus and what was given to the prophets from their Lord. We make no distinction between any of them, and we are Muslims [in submission] to Him.\'"',
+        sourceLabel: 'Noble Quran — Surah Al-Baqarah 2:136 & Sahih al-Bukhari 3443',
+        sourceUrl: 'https://quran.com/2/136'
+      },
+      {
+        id: 2,
+        category: 'honor',
+        question: '2. How is Jesus honored in the Quran, and what titles is he given?',
+        shortTag: '90+ Verses',
+        answer: 'Jesus (peace be upon him) is referenced in over 90 verses across 15 chapters of the Quran. The Quran honors him with unique, exalted titles: Al-Masih (The Messiah / Christ), Kalimatullah (A Word from God conveyed to Mary), Ruhun Minh (A Spirit from Him), and a Sign and Mercy for humanity—honored both in this world and in the Hereafter.',
+        quote: '"[And mention] when the angels said, \'O Mary, indeed Allah gives you good tidings of a word from Him, whose name will be the Messiah, Jesus, the son of Mary—distinguished in this world and the Hereafter and among those brought near [to Allah].\'"',
+        sourceLabel: 'Noble Quran — Surah Ali \'Imran 3:45',
+        sourceUrl: 'https://quran.com/ali-imran/45-55'
+      },
+      {
+        id: 3,
+        category: 'honor',
+        question: '3. What does Islam say about the Virgin Mary (Maryam)?',
+        shortTag: 'Surah Maryam (Ch. 19)',
+        answer: 'Mary (Maryam, peace be upon her) holds the highest rank of honor in the Quran. She is the only woman mentioned by name in the entire Quran, and Chapter 19 (Surah Maryam) is named after her—more than any chapter in the Bible. The Quran declares that God purified her and chose her above the women of all nations.',
+        quote: '"And [mention] when the angels said, \'O Mary, indeed Allah has chosen you and purified you and chosen you above the women of the worlds.\'"',
+        sourceLabel: 'Noble Quran — Surah Ali \'Imran 3:42',
+        sourceUrl: 'https://quran.com/3/42'
+      },
+      {
+        id: 4,
+        category: 'miracles',
+        question: '4. Do Muslims believe in the miraculous Virgin Birth of Jesus?',
+        shortTag: 'Virgin Birth',
+        answer: 'Yes, completely. Islam teaches that Jesus was born miraculously to the chaste Virgin Mary without any human father. When Mary asked how she could bear a child when no man had touched her, the angel explained that for the Creator of the universe, He simply decrees a matter by saying, "Be," and it is.',
+        quote: '"She said, \'My Lord, how will I have achild when no man has touched me?\' [The angel] said, \'Such is Allah; He creates what He wills. When He decrees a matter, He only says to it, "Be," and it is.\'"',
+        sourceLabel: 'Noble Quran — Surah Ali \'Imran 3:47',
+        sourceUrl: 'https://quran.com/ali-imran/45-55'
+      },
+      {
+        id: 5,
+        category: 'miracles',
+        question: '5. What miracles did Jesus perform according to the Quran?',
+        shortTag: 'Miracles by God\'s Permission',
+        answer: 'The Quran affirms the extraordinary miracles performed by Jesus by God\'s leave: speaking as an infant from the cradle to defend his mother\'s honor, healing those born blind and lepers, bringing the dead back to life by God\'s permission, and fashioning the shape of a bird from clay and breathing into it so it became a living bird by God\'s permission.',
+        quote: '"...I cure the blind and the leper, and I give life to the dead—by permission of Allah..."',
+        sourceLabel: 'Noble Quran — Surah Ali \'Imran 3:49 & Surah Al-Ma\'idah 5:110',
+        sourceUrl: 'https://quran.com/ali-imran/45-55'
+      },
+      {
+        id: 6,
+        category: 'miracles',
+        question: '6. What was the core message that Jesus preached?',
+        shortTag: 'Pure Monotheism',
+        answer: 'In Islam, Jesus did not come to abolish the Law of Moses or teach people to worship himself; rather, he called people to love and worship the One True Creator alone—matching Jesus\'s words in the Gospel of Mark 12:29 ("The Lord our God, the Lord is One") and John 17:3 ("that they know You, the only true God, and Jesus Christ whom You have sent").',
+        quote: '"Indeed, Allah is my Lord and your Lord, so worship Him. That is the straight path."',
+        sourceLabel: 'Noble Quran — Surah Ali \'Imran 3:51 & Surah Maryam 19:36',
+        sourceUrl: 'https://quran.com/ali-imran/45-55'
+      },
+      {
+        id: 7,
+        category: 'miracles',
+        question: '7. Why do Muslims honor Jesus as the Messiah and Prophet rather than God Himself?',
+        shortTag: 'God\'s Absolute Oneness',
+        answer: 'Islam holds that the Creator is eternal, self-sufficient, and above human needs such as eating, sleeping, or having physical offspring. Honoring Jesus as God\'s beloved Messiah and Messenger preserves both the majesty of the One Creator and the pure humility of Jesus, who himself prayed to God.',
+        quote: '"The Messiah, son of Mary, was not but a messenger; [other] messengers have passed on before him. And his mother was a supporter of truth..."',
+        sourceLabel: 'Noble Quran — Surah Al-Ma\'idah 5:75',
+        sourceUrl: 'https://quran.com/5/75'
+      },
+      {
+        id: 8,
+        category: 'miracles',
+        question: '8. How did Jesus and Mary worship and pray to God?',
+        shortTag: 'Prostration in Prayer',
+        answer: 'Just as Matthew 26:39 records that Jesus "fell on his face and prayed," the Quran describes Mary and the prophets bowing and prostrating with their foreheads on the ground in humble devotion—the exact way Muslims pray five times every day.',
+        quote: '"O Mary, be devoutly obedient to your Lord and prostrate and bow with those who bow [in prayer]."',
+        sourceLabel: 'Noble Quran — Surah Ali \'Imran 3:43',
+        sourceUrl: 'https://quran.com/3/43'
+      },
+      {
+        id: 9,
+        category: 'return',
+        question: '9. Do Muslims believe Jesus was crucified, or that he will return?',
+        shortTag: 'Raised Alive & Returning',
+        answer: 'Muslims believe that God protected and saved his beloved Messenger Jesus from being killed on the cross—raising him up alive unto Himself (Quran 4:157–158). Furthermore, authentic Sunni Hadith confirm that Jesus will physically descend back to earth to defeat the False Messiah (Antichrist) and establish 40 years of peace and justice.',
+        quote: '"By Him in Whose Hands my soul is, surely (Jesus,) the son of Mary will soon descend amongst you and will judge mankind justly..."',
+        sourceLabel: 'Sahih al-Bukhari 3448 & Sahih Muslim 155a',
+        sourceUrl: 'https://sunnah.com/bukhari:3448'
+      },
+      {
+        id: 10,
+        category: 'return',
+        question: '10. How does Islam view Christians, Jesus\'s Disciples, and the Prophet\'s Companions?',
+        shortTag: 'Compassion & Respect',
+        answer: 'The Quran praises the compassion, humility, and love found among sincere Christians (Quran 5:82) and honors Jesus\'s faithful Disciples (Al-Hawariyyun in Quran 3:52). Likewise, Sunni Muslims honor and love all the Companions (Sahabah) of Prophet Muhammad (ﷺ) who faithfully transmitted the Quran and Sunnah, never speaking ill of any of them.',
+        quote: '"...and you will find the nearest of them in affection to the believers those who say, \'We are Christians.\' That is because among them are priests and monks and because they are not arrogant."',
+        sourceLabel: 'Noble Quran — Surah Al-Ma\'idah 5:82',
+        sourceUrl: 'https://quran.com/5/82'
+      }
+    ];
+
+    const RETURN_STAGES = [
+      {
+        id: 'stage-1',
+        shortTitle: '1. Saved & Raised Alive',
+        headline: 'God Saved Jesus and Raised Him Alive to Heaven',
+        summary: 'According to the Quran, Jesus (peace be upon him) was neither killed nor crucified; rather, Allah protected his beloved Messenger from his enemies and raised him up alive to heaven. The Quran declares that his return is a certain sign of the approaching Hour.',
+        quote: '"[Mention] when Allah said, \'O Jesus, indeed I will take you and raise you to Myself and purify you from those who disbelieve...\'" (Quran 3:55) • "And indeed, Jesus will be [a sign for] knowledge of the Hour, so be not in doubt of it, and follow Me. This is a straight path." (Quran 43:61)',
+        refText: 'Surah Ali \'Imran 3:55 & Surah Az-Zukhruf 43:61',
+        refUrl: 'https://legacy.quran.com/43/61-67'
+      },
+      {
+        id: 'stage-2',
+        shortTitle: '2. Descent in Damascus',
+        headline: 'Physical Descent Supported by Two Angels',
+        summary: 'In authentic Hadith narrated by the noble Companion An-Nawwas ibn Sam\'an (may Allah be pleased with him), Prophet Muhammad (ﷺ) described the exact manner of Jesus\'s physical return to earth during a time of global trial.',
+        quote: '"...At that very time Allah will send Christ, son of Mary. He will descend at the white minaret on the eastern side of Damascus, wearing two garments lightly dyed with saffron and placing his hands on the wings of two Angels. When he lowers his head, there will fall beads of perspiration from his head, and when he raises it up, beads like pearls will scatter from it."',
+        refText: 'Sahih Muslim 2937a (Book of Tribulations & Portents of the Hour)',
+        refUrl: 'https://sunnah.com/muslim:2937a'
+      },
+      {
+        id: 'stage-3',
+        shortTitle: '3. Prayer With Believers',
+        headline: 'Joining the Believers in Prayer & Honoring the Message',
+        summary: 'When Jesus (peace be upon him) descends, the righteous believers will be lined up for prayer. Their Imam will step back and invite Jesus to lead the prayer, but Jesus will tell him to lead that prayer as a sign of God\'s honor for this community, and will then lead humanity in justice.',
+        quote: '"Jesus son of Mary would then descend and their (Muslims\') commander would invite him to come and lead them in prayer, but he would say: No, some amongst you are commanders over some amongst you. This is the honor from Allah for this Ummah."',
+        refText: 'Sahih Muslim 156 & Sahih al-Bukhari 3449',
+        refUrl: 'https://sunnah.com/muslim:156'
+      },
+      {
+        id: 'stage-4',
+        shortTitle: '4. Defeating the Antichrist',
+        headline: 'Ending the Deception of the False Messiah (Ad-Dajjal)',
+        summary: 'Before Jesus\'s descent, the world will face its greatest deception: Al-Masih ad-Dajjal (the False Messiah / Antichrist), who falsely claims divinity. Jesus—the true Messiah—will pursue him, overtake him at the gate of Ludd, and end his tyranny forever.',
+        quote: '"Every non-believer who smells the odor of his [Jesus\'s] breath will die and his breath will reach as far as he is able to see. He will then search for him (Dajjal) until he catches hold of him at the gate of Ludd and kills him."',
+        refText: 'Sahih Muslim 2937a',
+        refUrl: 'https://sunnah.com/muslim:2937a'
+      },
+      {
+        id: 'stage-5',
+        shortTitle: '5. Restoring Pure Truth',
+        headline: 'Clarifying His True Message & Uniting Humanity',
+        summary: 'Upon his return, Jesus (peace be upon him) will lovingly clarify the truth about himself: removing false claims that he was God or crucified, breaking the cross, abolishing the jizyah tax, and uniting all people of faith into one brotherhood worshipping the One True Creator.',
+        quote: '"By Him in Whose Hands my soul is, surely (Jesus,) the son of Mary will soon descend amongst you and will judge mankind justly (as a just ruler); he will break the Cross and kill the pigs and there will be no Jizya (taxation taken from non-Muslims). Money will be in abundance so that nobody will accept it, and a single prostration to Allah (in prayer) will be better than the whole world and whatever is in it."',
+        refText: 'Sahih al-Bukhari 3448 & Sahih Muslim 155a',
+        refUrl: 'https://sunnah.com/bukhari:3448'
+      },
+      {
+        id: 'stage-6',
+        shortTitle: '6. 40 Years of Peace',
+        headline: 'Universal Peace, Justice & Earthly Blessing',
+        summary: 'Under the just leadership of Jesus (peace be upon him), wars will cease, hatred, jealousy, and malice will vanish from human hearts, and the earth will bring forth unprecedented agricultural blessings and safety.',
+        quote: '"He will destroy the Antichrist and will live on the earth for forty years and then he will die. The Muslims will pray over him."',
+        refText: 'Sunan Abi Dawud 4324 (Graded Sahih / Authentic)',
+        refUrl: 'https://sunnah.com/abudawud:4324'
+      }
+    ];
+
+    let activeCategory = 'all';
+    let searchQuery = '';
+    let openQaIds = new Set([1, 2, 9]);
+    let activeStageId = 'stage-1';
+    let showGilbertese = true;
+
+    function renderQaList() {
+      const container = document.getElementById('qa-list-container');
+      const filtered = QA_ITEMS.filter(item => {
+        const matchesCat = activeCategory === 'all' || item.category === activeCategory;
+        const q = searchQuery.trim().toLowerCase();
+        const matchesSearch = !q ||
+          item.question.toLowerCase().includes(q) ||
+          item.answer.toLowerCase().includes(q) ||
+          item.quote.toLowerCase().includes(q) ||
+          item.sourceLabel.toLowerCase().includes(q);
+        return matchesCat && matchesSearch;
+      });
+
+      if (filtered.length === 0) {
+        container.innerHTML = `
+          <div class="bg-white rounded-xl p-6 text-center border border-slate-200 text-slate-500 text-sm">
+            No questions matched your filter. Try clearing the search box or clicking "All (10)".
+          </div>
+        `;
+        return;
+      }
+
+      container.innerHTML = filtered.map(item => {
+        const isOpen = openQaIds.has(item.id);
+        return `
+          <article class="bg-white rounded-xl border ${isOpen ? 'border-emerald-500 shadow-sm' : 'border-slate-200'} overflow-hidden transition">
+            <button type="button" data-qa-id="${item.id}" class="qa-toggle-btn w-full text-left px-4 sm:px-5 py-4 flex items-center justify-between gap-3 hover:bg-slate-50 transition">
+              <div class="flex flex-col sm:flex-row sm:items-center gap-1.5 sm:gap-3">
+                <span class="font-bold text-slate-900 text-sm sm:text-base">${item.question}</span>
+                <span class="inline-block w-fit text-[11px] font-semibold px-2.5 py-0.5 rounded-full bg-emerald-50 text-emerald-800 border border-emerald-200">${item.shortTag}</span>
+              </div>
+              <span class="text-emerald-700 font-bold text-lg shrink-0">${isOpen ? '−' : '+'}</span>
+            </button>
+            <div class="${isOpen ? 'block' : 'hidden'} print-expand px-4 sm:px-5 pb-5 pt-1 border-t border-slate-100 space-y-3">
+              <p class="text-sm sm:text-base text-slate-700 leading-relaxed">${item.answer}</p>
+              <blockquote class="bg-slate-50 border-l-4 border-emerald-600 p-3.5 rounded-r-lg text-xs sm:text-sm text-slate-800 italic">
+                ${item.quote}
+              </blockquote>
+              <div class="flex items-center justify-between flex-wrap gap-2 pt-1">
+                <span class="text-xs font-semibold text-slate-500">Reference: ${item.sourceLabel}</span>
+                <a href="${item.sourceUrl}" target="_blank" rel="noopener noreferrer" class="text-xs font-bold text-emerald-700 hover:text-emerald-900 underline">
+                  Verify Source Text ↗
+                </a>
+              </div>
+            </div>
+          </article>
+        `;
+      }).join('');
+
+      container.querySelectorAll('.qa-toggle-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const id = Number(btn.getAttribute('data-qa-id'));
+          if (openQaIds.has(id)) {
+            openQaIds.delete(id);
+          } else {
+            openQaIds.add(id);
+          }
+          renderQaList();
+        });
+      });
+    }
+
+    function renderReturnStages() {
+      const tabsEl = document.getElementById('return-stage-tabs');
+      const detailEl = document.getElementById('return-stage-detail');
+
+      tabsEl.innerHTML = RETURN_STAGES.map(st => {
+        const isActive = st.id === activeStageId;
+        return `
+          <button type="button" data-stage-id="${st.id}" class="stage-btn px-3 py-2 rounded-lg text-xs font-semibold text-left transition border ${
+            isActive
+              ? 'bg-emerald-700 text-white border-emerald-700 shadow-sm'
+              : 'bg-slate-50 text-slate-700 border-slate-200 hover:bg-slate-100'
+          }">
+            ${st.shortTitle}
+          </button>
+        `;
+      }).join('');
+
+      const activeStage = RETURN_STAGES.find(s => s.id === activeStageId) || RETURN_STAGES[0];
+      detailEl.innerHTML = `
+        <div class="space-y-3">
+          <div class="flex flex-wrap items-center justify-between gap-2">
+            <span class="text-xs font-bold uppercase tracking-wider text-emerald-700">${activeStage.shortTitle}</span>
+            <a href="${activeStage.refUrl}" target="_blank" rel="noopener noreferrer" class="text-xs font-bold text-emerald-700 underline hover:text-emerald-900">
+              Source: ${activeStage.refText} ↗
+            </a>
+          </div>
+          <h4 class="text-base sm:text-lg font-bold text-slate-900">${activeStage.headline}</h4>
+          <p class="text-sm sm:text-base text-slate-700 leading-relaxed">${activeStage.summary}</p>
+          <blockquote class="bg-white border-l-4 border-emerald-600 p-3.5 rounded-r-lg text-xs sm:text-sm text-slate-800 italic shadow-sm">
+            ${activeStage.quote}
+          </blockquote>
+        </div>
+      `;
+
+      tabsEl.querySelectorAll('.stage-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          activeStageId = btn.getAttribute('data-stage-id');
+          renderReturnStages();
+        });
+      });
+    }
+
+    function switchPage(pageId) {
+      document.querySelectorAll('.page-section').forEach(sec => {
+        if (sec.id === pageId) {
+          sec.classList.remove('hidden');
+        } else {
+          sec.classList.add('hidden');
+        }
+      });
+
+      document.querySelectorAll('.nav-tab').forEach(tab => {
+        const target = tab.getAttribute('data-tab');
+        if (target === pageId) {
+          tab.className = 'nav-tab flex-1 min-w-fit px-3 py-2 rounded-lg text-xs sm:text-sm font-semibold transition flex items-center justify-center gap-1.5 bg-emerald-700 text-white shadow-sm';
+        } else {
+          tab.className = 'nav-tab flex-1 min-w-fit px-3 py-2 rounded-lg text-xs sm:text-sm font-semibold transition flex items-center justify-center gap-1.5 text-slate-700 hover:bg-slate-100';
+        }
+      });
+
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function updateHatQrPreview() {
+      const baseUrl = (document.getElementById('qr-url-input').value || 'https://yourusername.github.io/isa/').trim();
+      const targetHash = document.getElementById('qr-target-select').value || '';
+      const caption = document.getElementById('qr-caption-select').value;
+      const vcfUrl = (document.getElementById('vcf-url-input').value || '').trim();
+
+      const fullUrl = baseUrl.replace(/#.*$/, '') + targetHash;
+      document.getElementById('hat-patch-caption').textContent = caption;
+      document.getElementById('hat-patch-url-display').textContent = fullUrl;
+
+      const holder = document.getElementById('qr-canvas-holder');
+      if (typeof qrcode === 'function') {
+        const qr = qrcode(0, 'H');
+        qr.addData(fullUrl);
+        qr.make();
+        holder.innerHTML = qr.createSvgTag(4, 2);
+      } else {
+        holder.innerHTML = `<div class="p-4 text-xs text-slate-600 border border-dashed border-slate-300 rounded">QR Ready for: ${fullUrl}</div>`;
+      }
+
+      const vcfPreview = document.getElementById('vcf-link-preview');
+      const vcfAnchor = document.getElementById('vcf-anchor');
+      if (vcfUrl) {
+        vcfPreview.classList.remove('hidden');
+        vcfAnchor.setAttribute('href', vcfUrl);
+      } else {
+        vcfPreview.classList.add('hidden');
+      }
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+      renderQaList();
+      renderReturnStages();
+      updateHatQrPreview();
+
+      // Check URL hash on load so direct links like #page-return work automatically
+      const initialHash = window.location.hash.replace('#', '');
+      if (['page-respect', 'page-return', 'page-sunnah', 'page-hat-qr'].includes(initialHash)) {
+        switchPage(initialHash);
+      }
+
+      // Nav tabs
+      document.querySelectorAll('.nav-tab').forEach(tab => {
+        tab.addEventListener('click', () => {
+          const pageId = tab.getAttribute('data-tab');
+          switchPage(pageId);
+        });
+      });
+
+      // Jump buttons
+      document.getElementById('btn-goto-return').addEventListener('click', () => switchPage('page-return'));
+      document.querySelectorAll('.page-jump-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          switchPage(btn.getAttribute('data-goto'));
+        });
+      });
+
+      // Expand / Collapse all
+      document.getElementById('btn-expand-all').addEventListener('click', () => {
+        QA_ITEMS.forEach(i => openQaIds.add(i.id));
+        renderQaList();
+      });
+      document.getElementById('btn-collapse-all').addEventListener('click', () => {
+        openQaIds.clear();
+        renderQaList();
+      });
+
+      // Search input
+      document.getElementById('qa-search-input').addEventListener('input', e => {
+        searchQuery = e.target.value;
+        renderQaList();
+      });
+
+      // Category buttons
+      document.querySelectorAll('.cat-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          activeCategory = btn.getAttribute('data-cat');
+          document.querySelectorAll('.cat-btn').forEach(b => {
+            if (b.getAttribute('data-cat') === activeCategory) {
+              b.className = 'cat-btn px-3 py-1.5 rounded-lg text-xs font-semibold bg-emerald-700 text-white';
+            } else {
+              b.className = 'cat-btn px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-100 text-slate-700 hover:bg-slate-200';
+            }
+          });
+          renderQaList();
+        });
+      });
+
+      // Gilbertese note toggle
+      document.getElementById('btn-lang-toggle').addEventListener('click', e => {
+        showGilbertese = !showGilbertese;
+        const banner = document.getElementById('gilbertese-banner');
+        if (showGilbertese) {
+          banner.classList.remove('hidden');
+          e.target.textContent = 'Show Gilbertese Notes: ON';
+        } else {
+          banner.classList.add('hidden');
+          e.target.textContent = 'Show Gilbertese Notes: OFF';
+        }
+      });
+
+      // Print / Save Offline buttons
+      document.getElementById('btn-print-page').addEventListener('click', () => window.print());
+      document.getElementById('btn-print-badge').addEventListener('click', () => window.print());
+
+      // QR Studio updates
+      document.getElementById('btn-update-qr').addEventListener('click', updateHatQrPreview);
+      document.getElementById('qr-url-input').addEventListener('input', updateHatQrPreview);
+      document.getElementById('qr-target-select').addEventListener('change', updateHatQrPreview);
+      document.getElementById('qr-caption-select').addEventListener('change', updateHatQrPreview);
+      document.getElementById('vcf-url-input').addEventListener('input', updateHatQrPreview);
+    });
+  </script>
+</body>
+</html>
