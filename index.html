@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Mauri! Discovering Jesus ('Isa / Iesu) in the Quran & Authentic Sunnah</title>
   <script src="https://cdn.tailwindcss.com/3.4.17"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcode-generator/1.4.4/qrcode.min.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Amiri:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
@@ -78,10 +77,6 @@
           <span>🧭</span>
           <span>3. Quran, Hadith &amp; Websites</span>
         </button>
-        <button type="button" data-tab="page-hat-qr" class="nav-tab flex-1 min-w-fit px-3 py-2 rounded-lg text-xs sm:text-sm font-semibold transition flex items-center justify-center gap-1.5 text-slate-700 hover:bg-slate-100">
-          <span>🧢</span>
-          <span>4. Hat QR Badge &amp; Contact</span>
-        </button>
       </div>
     </div>
   </nav>
@@ -97,7 +92,7 @@
       <div class="bg-white rounded-2xl p-5 sm:p-6 shadow-sm border border-emerald-100">
         <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-slate-100 pb-4 mb-4">
           <div>
-            <span class="text-xs font-bold uppercase tracking-wider text-emerald-700">Page 1 of 4 • Shared Reverence</span>
+            <span class="text-xs font-bold uppercase tracking-wider text-emerald-700">Page 1 of 3 • Shared Reverence</span>
             <h2 class="text-xl sm:text-2xl font-bold text-slate-900 mt-0.5">How Islam Honors Jesus ('Isa, Peace Be Upon Him)</h2>
           </div>
           <div class="flex items-center gap-2 no-print">
@@ -158,7 +153,7 @@
          ========================================== -->
     <section id="page-return" class="page-section hidden space-y-6">
       <div class="bg-white rounded-2xl p-5 sm:p-6 shadow-sm border border-emerald-100">
-        <span class="text-xs font-bold uppercase tracking-wider text-emerald-700">Page 2 of 4 • Prophetic Eschatology in Sunni Islam</span>
+        <span class="text-xs font-bold uppercase tracking-wider text-emerald-700">Page 2 of 3 • Prophetic Eschatology in Sunni Islam</span>
         <h2 class="text-xl sm:text-2xl font-bold text-slate-900 mt-1">
           The Return of Jesus ('Isa, Peace Be Upon Him) to Earth
         </h2>
@@ -265,7 +260,7 @@
     <section id="page-sunnah" class="page-section hidden space-y-6">
       <!-- Sunni Principle & Companions Explanation -->
       <div class="bg-white rounded-2xl p-5 sm:p-6 shadow-sm border border-emerald-100 space-y-4">
-        <span class="text-xs font-bold uppercase tracking-wider text-emerald-700">Page 3 of 4 • Authentic Foundation &amp; Further Reading</span>
+        <span class="text-xs font-bold uppercase tracking-wider text-emerald-700">Page 3 of 3 • Authentic Foundation &amp; Further Reading</span>
         <h2 class="text-xl sm:text-2xl font-bold text-slate-900">
           Why We Follow the Quran, Authentic Hadith &amp; Honor All Companions
         </h2>
@@ -382,89 +377,9 @@
         <button type="button" data-goto="page-return" class="page-jump-btn px-4 py-2 rounded-xl bg-slate-200 hover:bg-slate-300 text-slate-800 text-xs sm:text-sm font-semibold transition">
           ← Back to Page 2: His Return
         </button>
-        <button type="button" data-goto="page-hat-qr" class="page-jump-btn px-4 py-2 rounded-xl bg-emerald-700 hover:bg-emerald-800 text-white text-xs sm:text-sm font-semibold transition">
-          Page 4: Hat QR Badge &amp; Contact →
+        <button type="button" data-goto="page-respect" class="page-jump-btn px-4 py-2 rounded-xl bg-emerald-700 hover:bg-emerald-800 text-white text-xs sm:text-sm font-semibold transition">
+          Back to Page 1: 10 Q&amp;As ↑
         </button>
-      </div>
-    </section>
-
-    <!-- ==========================================
-         PAGE 4: HAT QR CODE STUDIO & CONTACT VCF BRIDGE
-         ========================================== -->
-    <section id="page-hat-qr" class="page-section hidden space-y-6">
-      <div class="bg-white rounded-2xl p-5 sm:p-6 shadow-sm border border-emerald-100">
-        <span class="text-xs font-bold uppercase tracking-wider text-emerald-700">Page 4 of 4 • Share This Page or Print Your Hat Patch</span>
-        <h2 class="text-xl sm:text-2xl font-bold text-slate-900 mt-1">
-          Hat QR Code Badge Generator &amp; GitHub Pages Setup
-        </h2>
-        <p class="text-sm text-slate-600 mt-1.5 leading-relaxed">
-          Enter your GitHub Pages URL below to generate a high-contrast, curved-hat-friendly QR badge. Anyone scanning your hat can jump straight to the 10 Q&amp;As or directly to the page on Jesus's Return (`#page-return`).
-        </p>
-
-        <div class="mt-5 grid grid-cols-1 md:grid-cols-2 gap-6 items-start">
-          <!-- Left: Controls -->
-          <div class="space-y-4">
-            <div>
-              <label for="qr-url-input" class="block text-xs font-bold uppercase text-slate-600 mb-1">1. Your GitHub Pages URL</label>
-              <input id="qr-url-input" type="url" value="https://yourusername.github.io/isa/" class="w-full px-3.5 py-2 rounded-xl border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-600" />
-              <p class="text-xs text-slate-500 mt-1">Tip: Keep the repo name short (e.g., <code>/isa</code> or <code>/iesu</code>) so the QR code squares stay large and easy to scan on a hat.</p>
-            </div>
-
-            <div>
-              <label for="qr-target-select" class="block text-xs font-bold uppercase text-slate-600 mb-1">2. Landing Page When Scanned</label>
-              <select id="qr-target-select" class="w-full px-3.5 py-2 rounded-xl border border-slate-300 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-emerald-600">
-                <option value="">Open Page 1: 10 Q&amp;As on Jesus in Islam (Default)</option>
-                <option value="#page-return">Open Page 2 Directly: The Return of Jesus to Earth</option>
-                <option value="#page-sunnah">Open Page 3 Directly: Quran, Hadith &amp; Websites</option>
-              </select>
-            </div>
-
-            <div>
-              <label for="qr-caption-select" class="block text-xs font-bold uppercase text-slate-600 mb-1">3. Hat Patch Micro-Hook Text</label>
-              <select id="qr-caption-select" class="w-full px-3.5 py-2 rounded-xl border border-slate-300 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-emerald-600">
-                <option value="Mauri! Who is Iesu ('Isa) in the Quran?">Mauri! Who is Iesu ('Isa) in the Quran?</option>
-                <option value="We Love &amp; Await Jesus Too — Scan Why">We Love &amp; Await Jesus Too — Scan Why</option>
-                <option value="10 Questions on Jesus in Islam">10 Questions on Jesus in Islam</option>
-                <option value="Jesus Will Return — Read the Prophecy">Jesus Will Return — Read the Prophecy</option>
-              </select>
-            </div>
-
-            <div>
-              <label for="vcf-url-input" class="block text-xs font-bold uppercase text-slate-600 mb-1">4. Optional Link to Your Contact Card (contact.vcf)</label>
-              <input id="vcf-url-input" type="text" placeholder="e.g., https://yourusername.github.io/contact.vcf" class="w-full px-3.5 py-2 rounded-xl border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-600" />
-            </div>
-
-            <div class="flex flex-wrap gap-2 pt-1">
-              <button id="btn-update-qr" type="button" class="px-4 py-2 rounded-xl bg-emerald-700 hover:bg-emerald-800 text-white text-xs sm:text-sm font-semibold shadow-sm transition">
-                Update Hat Badge Preview
-              </button>
-              <button id="btn-print-badge" type="button" class="px-4 py-2 rounded-xl bg-slate-800 hover:bg-slate-900 text-white text-xs sm:text-sm font-semibold shadow-sm transition">
-                Print / Save Hat Patch
-              </button>
-            </div>
-          </div>
-
-          <!-- Right: Live Printable Hat Patch Preview -->
-          <div class="flex flex-col items-center justify-center bg-slate-100 rounded-2xl p-5 border border-slate-200">
-            <span class="text-xs font-semibold text-slate-500 mb-2 no-print">Live Hat Patch Preview (High-Contrast Level H)</span>
-            <div id="hat-patch-card" class="bg-white border-4 border-emerald-900 rounded-2xl p-4 shadow-md text-center max-w-xs w-full">
-              <div class="text-xs font-extrabold uppercase tracking-widest text-emerald-800 mb-1">🌴 Mauri • Peace</div>
-              <div id="qr-canvas-holder" class="flex items-center justify-center mx-auto my-2 p-2 bg-white rounded-lg"></div>
-              <p id="hat-patch-caption" class="text-sm font-extrabold text-slate-900 leading-snug mt-1">
-                Mauri! Who is Iesu ('Isa) in the Quran?
-              </p>
-              <p id="hat-patch-url-display" class="text-[11px] font-mono text-slate-500 mt-1 break-all">
-                https://yourusername.github.io/isa/
-              </p>
-            </div>
-
-            <div id="vcf-link-preview" class="hidden mt-4 w-full">
-              <a id="vcf-anchor" href="https://github.com" target="_blank" rel="noopener noreferrer" class="block w-full text-center py-2.5 px-4 rounded-xl bg-teal-700 hover:bg-teal-800 text-white text-xs font-semibold transition">
-                📇 Save My Contact Card (contact.vcf)
-              </a>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
 
@@ -779,44 +694,13 @@
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
-    function updateHatQrPreview() {
-      const baseUrl = (document.getElementById('qr-url-input').value || 'https://yourusername.github.io/isa/').trim();
-      const targetHash = document.getElementById('qr-target-select').value || '';
-      const caption = document.getElementById('qr-caption-select').value;
-      const vcfUrl = (document.getElementById('vcf-url-input').value || '').trim();
-
-      const fullUrl = baseUrl.replace(/#.*$/, '') + targetHash;
-      document.getElementById('hat-patch-caption').textContent = caption;
-      document.getElementById('hat-patch-url-display').textContent = fullUrl;
-
-      const holder = document.getElementById('qr-canvas-holder');
-      if (typeof qrcode === 'function') {
-        const qr = qrcode(0, 'H');
-        qr.addData(fullUrl);
-        qr.make();
-        holder.innerHTML = qr.createSvgTag(4, 2);
-      } else {
-        holder.innerHTML = `<div class="p-4 text-xs text-slate-600 border border-dashed border-slate-300 rounded">QR Ready for: ${fullUrl}</div>`;
-      }
-
-      const vcfPreview = document.getElementById('vcf-link-preview');
-      const vcfAnchor = document.getElementById('vcf-anchor');
-      if (vcfUrl) {
-        vcfPreview.classList.remove('hidden');
-        vcfAnchor.setAttribute('href', vcfUrl);
-      } else {
-        vcfPreview.classList.add('hidden');
-      }
-    }
-
     window.addEventListener('DOMContentLoaded', () => {
       renderQaList();
       renderReturnStages();
-      updateHatQrPreview();
 
       // Check URL hash on load so direct links like #page-return work automatically
       const initialHash = window.location.hash.replace('#', '');
-      if (['page-respect', 'page-return', 'page-sunnah', 'page-hat-qr'].includes(initialHash)) {
+      if (['page-respect', 'page-return', 'page-sunnah'].includes(initialHash)) {
         switchPage(initialHash);
       }
 
@@ -880,16 +764,8 @@
         }
       });
 
-      // Print / Save Offline buttons
+      // Print / Save Offline button
       document.getElementById('btn-print-page').addEventListener('click', () => window.print());
-      document.getElementById('btn-print-badge').addEventListener('click', () => window.print());
-
-      // QR Studio updates
-      document.getElementById('btn-update-qr').addEventListener('click', updateHatQrPreview);
-      document.getElementById('qr-url-input').addEventListener('input', updateHatQrPreview);
-      document.getElementById('qr-target-select').addEventListener('change', updateHatQrPreview);
-      document.getElementById('qr-caption-select').addEventListener('change', updateHatQrPreview);
-      document.getElementById('vcf-url-input').addEventListener('input', updateHatQrPreview);
     });
   </script>
 </body>
